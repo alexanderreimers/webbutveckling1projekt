@@ -1,121 +1,767 @@
-/* ===== GRUNDINSTÄLLNINGAR ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* =====================================================
+   FÄRGVARIABLER
+   Här samlas alla färger så sidan blir enkel att ändra.
+===================================================== */
+:root {
+
+  --darkBlue: #0a2540;
+  --midBlue: #1565c0;
+  --lightBlue: #4fc3f7;
+
+  --lightBg: #e8f4fd;
+  --white: #ffffff;
+
+  --textDark: #0a2540;
+  --textGray: #546e7a;
+
+  --radius: 12px;
+
 }
 
-body {
-  font-family: Arial, sans-serif;
-  color: #0a2540;
-  background: white;
-  line-height: 1.6;
+
+/* =====================================================
+   RESET
+   Tar bort standardmarginaler från webbläsaren.
+===================================================== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* ===== HERO (SIDA 1) ===== */
-.hero {
-  background: #0a2540;
-  color: white;
-  padding: 120px 60px;
+
+body{
+  font-family:'DM Sans', sans-serif;
+  background:white;
+  color:var(--textDark);
+  line-height:1.6;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  line-height: 1.15;
-  margin-bottom: 24px;
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+.navbar{
+
+  position:sticky;
+  top:0;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  background:var(--darkBlue);
+
+  padding:0 60px;
+  height:70px;
+
+  z-index:100;
+
 }
 
-.hero p {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 520px;
-  margin-bottom: 36px;
+
+/* Logotyp */
+.logo{
+
+  font-family:'Syne', sans-serif;
+  font-size:1.6rem;
+  font-weight:800;
+  color:white;
+
 }
 
-.knapp {
-  display: inline-block;
-  background: #4fc3f7;
-  color: #0a2540;
-  font-weight: bold;
-  padding: 14px 32px;
-  border-radius: 10px;
-  text-decoration: none;
+.logo span{
+  color:var(--lightBlue);
 }
 
-.knapp:hover {
-  background: #81d4fa;
+
+/* Menylänkar */
+.nav-links{
+
+  display:flex;
+  gap:36px;
+
+  list-style:none;
+
 }
 
-/* ===== OM OSS (SIDA 2) ===== */
-.om-oss {
-  background: white;
-  padding: 90px 60px;
+.nav-links a{
+
+  color:rgba(255,255,255,0.8);
+
+  text-decoration:none;
+
+  transition:0.2s;
+
 }
 
-/* Två kolumner: text till vänster, blixt till höger */
-.om-oss-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+.nav-links a:hover{
+  color:var(--lightBlue);
 }
 
-/* Liten blå text ovanför rubriken */
-.etikett {
-  font-size: 0.8rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #1565c0;
-  margin-bottom: 10px;
+
+/* =====================================================
+   HERO
+===================================================== */
+.hero{
+
+  position:relative;
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--darkBlue),
+    #1a3a6b,
+    var(--midBlue)
+  );
+
+  color:white;
+
+  padding:120px 60px;
+
+  overflow:hidden;
+
 }
 
-.om-oss-text h2 {
-  font-size: 2rem;
-  margin-bottom: 16px;
-  color: #0a2540;
+
+/* Dekorativa bakgrundscirklar */
+.hero::before,
+.hero::after{
+
+  content:'';
+
+  position:absolute;
+  border-radius:50%;
+
+  background:var(--lightBlue);
+
+  opacity:0.08;
+
 }
 
-.om-oss-text p {
-  color: #546e7a;
-  margin-bottom: 16px;
+.hero::before{
+
+  width:500px;
+  height:500px;
+
+  top:-180px;
+  right:-120px;
+
 }
 
-/* De fyra informationskorten */
-.kort-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 28px;
+.hero::after{
+
+  width:260px;
+  height:260px;
+
+  bottom:-100px;
+  left:40%;
+
 }
 
-.kort {
-  background: #e8f4fd;
-  border-left: 4px solid #1565c0;
-  border-radius: 10px;
-  padding: 18px;
+
+/* Hero-text */
+.hero-content{
+
+  position:relative;
+  max-width:700px;
+
 }
 
-.kort h4 {
-  font-size: 0.95rem;
-  margin-bottom: 4px;
-  color: #0a2540;
+
+/* Liten text ovanför rubriken */
+.hero-tag{
+
+  color:var(--lightBlue);
+
+  text-transform:uppercase;
+
+  letter-spacing:2px;
+
+  margin-bottom:20px;
+
 }
 
-.kort p {
-  font-size: 0.85rem;
-  color: #546e7a;
-  margin: 0;
+
+/* Huvudrubrik */
+.hero h1{
+
+  font-family:'Syne', sans-serif;
+
+  font-size:4rem;
+
+  line-height:1.1;
+
+  margin-bottom:24px;
+
 }
 
-/* Blixtrutan till höger */
-.blixt-ruta {
-  background: #e8f4fd;
-  border-radius: 20px;
-  aspect-ratio: 1;
-  max-width: 380px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+/* Vanlig text */
+.hero-text{
+
+  max-width:550px;
+
+  margin-bottom:40px;
+
+  color:rgba(255,255,255,0.85);
+
+}
+
+
+/* =====================================================
+   KNAPPAR
+===================================================== */
+.btn{
+
+  display:inline-block;
+
+  padding:14px 28px;
+
+  border-radius:12px;
+
+  text-decoration:none;
+
+  transition:0.2s;
+
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+
+/* Primär knapp */
+.primary-btn{
+
+  background:var(--lightBlue);
+
+  color:var(--darkBlue);
+
+  font-weight:700;
+
+}
+
+
+/* Sekundär knapp */
+.secondary-btn{
+
+  border:2px solid rgba(255,255,255,0.5);
+
+  color:white;
+
+  margin-left:16px;
+
+}
+
+
+/* =====================================================
+   GEMENSAMMA SECTION-STILAR
+===================================================== */
+.section{
+  padding:90px 60px;
+}
+
+
+.section-label{
+
+  text-transform:uppercase;
+
+  letter-spacing:2px;
+
+  color:var(--midBlue);
+
+  margin-bottom:12px;
+
+}
+
+
+.section-title{
+
+  font-family:'Syne', sans-serif;
+
+  font-size:2.5rem;
+
+  margin-bottom:20px;
+
+}
+
+
+.section-text{
+  color:var(--textGray);
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+.about-grid{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:60px;
+
+  align-items:center;
+
+}
+
+
+/* Kortgrid */
+.feature-grid{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:20px;
+
+  margin-top:36px;
+
+}
+
+
+/* Kort */
+.feature-card{
+
+  background:var(--lightBg);
+
+  padding:20px;
+
+  border-radius:12px;
+
+  border-left:4px solid var(--midBlue);
+
+}
+
+
+/* Sol-illustration */
+.sun-box{
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background:var(--lightBg);
+
+  border-radius:24px;
+
+  aspect-ratio:1;
+
+}
+
+
+/* =====================================================
+   KUNDFALL
+===================================================== */
+.cases{
+  background:var(--lightBg);
+}
+
+
+.case-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:28px;
+
+}
+
+
+/* Kort */
+.case-card{
+
+  background:white;
+
+  border-radius:12px;
+
+  overflow:hidden;
+
+  transition:0.2s;
+
+}
+
+.case-card:hover{
+  transform:translateY(-6px);
+}
+
+
+/* Blå topp */
+.top-line{
+
+  height:8px;
+
+  background:
+  linear-gradient(
+    90deg,
+    var(--midBlue),
+    var(--lightBlue)
+  );
+
+}
+
+
+/* Innehåll */
+.case-content{
+  padding:28px;
+}
+
+
+/* Resultatbox */
+.case-result{
+
+  background:var(--lightBg);
+
+  margin-top:20px;
+
+  padding:14px;
+
+  border-radius:10px;
+
+}
+
+
+/* Stor siffra */
+.number{
+
+  display:block;
+
+  font-size:2rem;
+
+  font-weight:700;
+
+  color:var(--midBlue);
+
+}
+
+
+/* =====================================================
+   KALKYLATOR
+===================================================== */
+.calculator-layout{
+
+  display:grid;
+
+  grid-template-columns:1fr 1.4fr;
+
+  gap:50px;
+
+}
+
+
+/* Formulär */
+.calc-form{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
+
+}
+
+
+/* Inputs */
+input,
+select,
+textarea{
+
+  width:100%;
+
+  padding:12px 16px;
+
+  border:2px solid #d7e2eb;
+
+  border-radius:12px;
+
+  font-family:'DM Sans', sans-serif;
+
+}
+
+
+/* När användaren klickar */
+input:focus,
+select:focus,
+textarea:focus{
+
+  outline:none;
+
+  border-color:var(--midBlue);
+
+}
+
+
+/* Knapp */
+.calculate-btn{
+
+  background:var(--midBlue);
+
+  color:white;
+
+  border:none;
+
+  padding:14px;
+
+  border-radius:12px;
+
+  cursor:pointer;
+
+}
+
+
+/* Resultatbox */
+.result-box{
+
+  display:none;
+
+  flex-direction:column;
+
+  gap:12px;
+
+  margin-top:24px;
+
+  background:var(--lightBg);
+
+  padding:24px;
+
+  border-radius:12px;
+
+}
+
+
+/* Klassen läggs till med JavaScript */
+.result-box.show{
+  display:flex;
+}
+
+
+/* Rad i resultatbox */
+.result-row{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  border-bottom:1px solid #c8d8e7;
+
+  padding-bottom:10px;
+
+}
+
+
+/* =====================================================
+   GRAF
+===================================================== */
+.chart-container{
+
+  background:var(--lightBg);
+
+  padding:28px;
+
+  border-radius:12px;
+
+}
+
+
+/* =====================================================
+   KONTAKT
+===================================================== */
+.contact{
+
+  background:var(--darkBlue);
+
+  color:white;
+
+  text-align:center;
+
+}
+
+
+.contact-form{
+
+  max-width:600px;
+
+  margin:auto;
+
+  display:grid;
+
+  gap:18px;
+
+}
+
+
+/* Skicka-knapp */
+.send-btn{
+
+  background:var(--lightBlue);
+
+  border:none;
+
+  padding:14px;
+
+  border-radius:12px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+footer{
+
+  background:#06101d;
+
+  color:rgba(255,255,255,0.5);
+
+  text-align:center;
+
+  padding:24px;
+
+}
+
+
+/* =====================================================
+   ANIMATIONER
+===================================================== */
+
+/*
+  Alla element med klassen "animate"
+  börjar osynliga.
+*/
+.animate{
+
+  opacity:0;
+
+  transform:translateY(20px);
+
+  transition:0.6s;
+
+}
+
+
+/*
+  Klassen "in" läggs till med JS
+  när elementet scrollas in.
+*/
+.animate.in{
+
+  opacity:1;
+
+  transform:translateY(0);
+
+}
+
+
+/* =====================================================
+   MOBILMENY
+===================================================== */
+.menu-btn{
+
+  display:none;
+
+  flex-direction:column;
+
+  gap:5px;
+
+  background:none;
+
+  border:none;
+
+  cursor:pointer;
+
+}
+
+
+/* Strecken */
+.menu-btn span{
+
+  width:25px;
+  height:2px;
+
+  background:white;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+/* Surfplatta */
+@media(max-width:1024px){
+
+  .about-grid,
+  .calculator-layout{
+    grid-template-columns:1fr;
+  }
+
+  .case-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+
+/* Mobil */
+@media(max-width:640px){
+
+  .navbar{
+    padding:0 20px;
+  }
+
+  .menu-btn{
+    display:flex;
+  }
+
+  /*
+    Menyn göms först.
+    JavaScript öppnar den genom
+    att lägga till klassen "open".
+  */
+  .nav-links{
+
+    display:none;
+
+    position:absolute;
+
+    top:70px;
+    left:0;
+    right:0;
+
+    background:var(--darkBlue);
+
+    flex-direction:column;
+
+    padding:20px;
+
+  }
+
+  .nav-links.open{
+    display:flex;
+  }
+
+  .hero{
+    padding:80px 20px;
+  }
+
+  .hero h1{
+    font-size:2.7rem;
+  }
+
+  .section{
+    padding:60px 20px;
+  }
+
+  .feature-grid,
+  .case-grid{
+    grid-template-columns:1fr;
+  }
+
 }

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <!-- Grundinställningar -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>EasySolar – Smarta energilösningar</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Egen CSS -->
+  <link rel="stylesheet" href="../Css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../Images/blixt.png">
+
+</head>
+
+<body>
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+  <nav class="navbar">
+
+    <!-- Logotyp -->
+    <div class="logo">
+      Easy<span>Solar</span>
+    </div>
+
+    <!-- Hamburgerikon för mobil -->
+    <button class="menu-btn" id="menuBtn" aria-label="Öppna meny">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Menylänkar -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" onclick="closeMenu()">Om oss</a></li>
+      <li><a href="#cases" onclick="closeMenu()">Kundfall</a></li>
+      <li><a href="#calculator" onclick="closeMenu()">Kalkylator</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Kontakt</a></li>
+    </ul>
+
+  </nav>
+
+
+  <!-- =====================================================
+       HERO-SEKTION
+  ====================================================== -->
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <p class="hero-tag">
+        Energieffektivisering för framtiden
+      </p>
+
+      <h1>
+        Sänk din elräkning.<br>
+        Öka din hållbarhet.
+      </h1>
+
+      <p class="hero-text">
+        Vi hjälper hushåll och företag att förstå sin energianvändning
+        och hitta smartare lösningar som sparar både pengar och miljö.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#calculator" class="btn primary-btn">
+          Beräkna besparing
+        </a>
+
+        <a href="#cases" class="btn secondary-btn">
+          Se kundfall
+        </a>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       OM OSS
+  ====================================================== -->
+  <section class="about section" id="about">
+
+    <div class="about-grid">
+
+      <!-- Textinnehåll -->
+      <div class="animate">
+
+        <p class="section-label">
+          Om EasySolar
+        </p>
+
+        <h2 class="section-title">
+          Vi gör energi enklare
+        </h2>
+
+        <p class="section-text">
+          EasySolar skapades med målet att göra energibesparing
+          enkelt att förstå för alla.
+          Vi kombinerar smart teknik med personlig rådgivning
+          för att skapa lösningar som faktiskt fungerar i vardagen.
+        </p>
+
+        <!-- Informationskort -->
+        <div class="feature-grid">
+
+          <div class="feature-card">
+            <h4>Solcellsanalys</h4>
+            <p>Vi analyserar takets potential och möjlig produktion.</p>
+          </div>
+
+          <div class="feature-card">
+            <h4>Förbrukningsdata</h4>
+            <p>Få tydlig överblick över din elanvändning.</p>
+          </div>
+
+          <div class="feature-card">
+            <h4>Smarta råd</h4>
+            <p>Konkreta tips som minskar energikostnader.</p>
+          </div>
+
+          <div class="feature-card">
+            <h4>Support</h4>
+            <p>Personlig hjälp hela vägen.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Illustration -->
+      <div class="animate">
+
+        <div class="sun-box">
+
+          <!-- Enkel SVG-ikon -->
+          <svg xmlns="http://www.w3.org/2000/svg"
+               width="120"
+               height="120"
+               viewBox="0 0 24 24"
+               fill="none"
+               stroke="#1565c0"
+               stroke-width="1.5"
+               stroke-linecap="round"
+               stroke-linejoin="round">
+
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+
+          </svg>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       KUNDFALL
+  ====================================================== -->
+  <section class="cases section" id="cases">
+
+    <div class="animate">
+
+      <p class="section-label">
+        Kundresultat
+      </p>
+
+      <h2 class="section-title">
+        Resultat som gör skillnad
+      </h2>
+
+    </div>
+
+    <div class="case-grid">
+
+      <!-- Kort 1 -->
+      <article class="case-card animate">
+
+        <div class="top-line"></div>
+
+        <div class="case-content">
+
+          <h3>Villa i Göteborg</h3>
+
+          <p>
+            Familjen Lindqvist installerade solceller och batterilagring.
+          </p>
+
+          <div class="case-result">
+
+            <span class="number">62%</span>
+
+            <span class="small-text">
+              lägre elkostnad
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- Kort 2 -->
+      <article class="case-card animate">
+
+        <div class="top-line"></div>
+
+        <div class="case-content">
+
+          <h3>Industrilokal i Malmö</h3>
+
+          <p>
+            Smart energistyrning minskade företagets kostnader kraftigt.
+          </p>
+
+          <div class="case-result">
+
+            <span class="number">180 000 kr</span>
+
+            <span class="small-text">
+              sparat första året
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- Kort 3 -->
+      <article class="case-card animate">
+
+        <div class="top-line"></div>
+
+        <div class="case-content">
+
+          <h3>BRF i Stockholm</h3>
+
+          <p>
+            Gemensam solel för 48 lägenheter gav snabb återbetalning.
+          </p>
+
+          <div class="case-result">
+
+            <span class="number">2-3 år</span>
+
+            <span class="small-text">
+              återbetalningstid
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       KALKYLATOR
+  ====================================================== -->
+  <section class="calculator section" id="calculator">
+
+    <div class="animate">
+
+      <p class="section-label">
+        Energikalkylator
+      </p>
+
+      <h2 class="section-title">
+        Räkna ut din besparing
+      </h2>
+
+    </div>
+
+
+    <div class="calculator-layout">
+
+      <!-- FORMULÄR -->
+      <div>
+
+        <div class="calc-form">
+
+          <!-- Årsförbrukning -->
+          <div>
+
+            <label for="consumption">
+              Årsförbrukning (kWh)
+            </label>
+
+            <input type="number"
+                   id="consumption"
+                   placeholder="20000">
+
+          </div>
+
+          <!-- Elpris -->
+          <div>
+
+            <label for="price">
+              Elpris (kr/kWh)
+            </label>
+
+            <input type="number"
+                   id="price"
+                   placeholder="1.50"
+                   step="0.01">
+
+          </div>
+
+          <!-- Takyta -->
+          <div>
+
+            <label for="area">
+              Takyta för solceller (m²)
+            </label>
+
+            <input type="number"
+                   id="area"
+                   placeholder="40">
+
+          </div>
+
+          <!-- Region -->
+          <div>
+
+            <label for="region">
+              Region
+            </label>
+
+            <select id="region">
+
+              <option value="1">
+                Norra Sverige
+              </option>
+
+              <option value="1.15" selected>
+                Mellersta Sverige
+              </option>
+
+              <option value="1.3">
+                Södra Sverige
+              </option>
+
+            </select>
+
+          </div>
+
+          <!-- Beräkningsknapp -->
+          <button class="calculate-btn" onclick="calculateSavings()">
+            Beräkna
+          </button>
+
+        </div>
+
+
+        <!-- Resultat -->
+        <div class="result-box" id="resultBox">
+
+          <div class="result-row">
+            <span>Solproduktion / år</span>
+            <strong id="productionResult">–</strong>
+          </div>
+
+          <div class="result-row">
+            <span>Täckt förbrukning</span>
+            <strong id="coverageResult">–</strong>
+          </div>
+
+          <div class="result-row">
+            <span>Årlig besparing</span>
+            <strong id="savingResult">–</strong>
+          </div>
+
+          <div class="result-row">
+            <span>Återbetalningstid</span>
+            <strong id="paybackResult">–</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- GRAF -->
+      <div class="chart-container animate">
+
+        <h3>
+          Elförbrukning vs Solproduktion
+        </h3>
+
+        <canvas id="energyChart"></canvas>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       KONTAKT
+  ====================================================== -->
+  <section class="contact section" id="contact">
+
+    <p class="section-label">
+      Kontakt
+    </p>
+
+    <h2 class="section-title">
+      Vill du veta mer?
+    </h2>
+
+    <p class="contact-text">
+      Skicka en förfrågan så kontaktar vi dig inom 24 timmar.
+    </p>
+
+    <form class="contact-form" onsubmit="sendForm(event)">
+
+      <input type="text"
+             placeholder="Namn"
+             required>
+
+      <input type="email"
+             placeholder="E-post"
+             required>
+
+      <textarea placeholder="Berätta om ditt energibehov..."></textarea>
+
+      <button type="submit" class="send-btn">
+        Skicka
+      </button>
+
+    </form>
+
+  </section>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer>
+
+    <p>
+      © 2025 EasySolar – Energieffektivisering AB
+    </p>
+
+  </footer>
+
+
+  <!-- Egen JavaScript -->
+  <script src="../Java/java.js"></script>
+
+</body>
+</html>
