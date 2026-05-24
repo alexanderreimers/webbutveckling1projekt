@@ -347,7 +347,35 @@ body{
 
   border-radius:24px;
 
-  aspect-ratio:1/1;
+  padding:30px;
+
+  min-height:420px;
+
+  overflow:hidden;
+
+}
+
+
+/* Bild */
+.solar-image{
+
+  width:100%;
+
+  max-width:420px;
+
+  height:auto;
+
+  object-fit:contain;
+
+  transition:0.3s;
+
+}
+
+
+/* Liten hover-effekt */
+.solar-image:hover{
+
+  transform:scale(1.03);
 
 }
 
@@ -762,6 +790,122 @@ footer{
   .feature-grid,
   .case-grid{
     grid-template-columns:1fr;
+  }
+
+}
+
+/* =====================================================
+   AUTOMATISK STYRNING
+===================================================== */
+
+.automation{
+
+  background:
+  linear-gradient(
+    135deg,
+    #4d5f9b,
+    #5a6db0
+  );
+
+  color:white;
+
+}
+
+
+.automation-content{
+
+  max-width:1100px;
+
+}
+
+
+.automation-title{
+
+  font-family:'Syne', sans-serif;
+
+  font-size:3rem;
+
+  margin-bottom:30px;
+
+  color:white;
+
+}
+
+
+.automation-line{
+
+  width:100%;
+  height:4px;
+
+  background:rgba(255,255,255,0.15);
+
+  margin-bottom:40px;
+
+  border-radius:10px;
+
+}
+
+
+.automation-text{
+
+  font-size:1.5rem;
+
+  line-height:1.8;
+
+  color:rgba(255,255,255,0.92);
+
+  max-width:1400px;
+
+  margin-bottom:40px;
+
+}
+
+
+.automation-list{
+
+  list-style:disc;
+
+  padding-left:40px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:18px;
+
+}
+
+
+.automation-list li{
+
+  font-size:1.4rem;
+
+  color:white;
+
+}
+
+
+.section-label.light{
+  color:rgba(255,255,255,0.7);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:640px){
+
+  .automation-title{
+    font-size:2rem;
+  }
+
+  .automation-text{
+    font-size:1.1rem;
+  }
+
+  .automation-list li{
+    font-size:1.05rem;
   }
 
 }
