@@ -50,6 +50,7 @@
       <li><a href="#calculator" onclick="closeMenu()">Kalkylator</a></li>
       <li><a href="#contact" onclick="closeMenu()">Kontakt</a></li>
       <li><a href="#automation" onclick="closemenu()">Automation</a></li>
+      <li><a href="#electricity" onclick="closeMenu()">Elpris</a></li>
     </ul>
 
   </nav>
@@ -455,7 +456,59 @@
 
   </section>
 
+<!-- =====================================================
+     LIVE ELPRISER
+===================================================== -->
+<section class="electricity section" id="electricity">
 
+  <div class="animate">
+
+    <p class="section-label">
+      Live elmarknad
+    </p>
+
+    <h2 class="section-title">
+      Dagens elpriser
+    </h2>
+
+    <p class="section-text electricity-text">
+      Följ dagens elpris i realtid och se hur priserna
+      förändras under dygnet i elområde SE3.
+    </p>
+
+  </div>
+
+
+  <div class="electricity-layout">
+
+    <!-- LIVE PRIS -->
+    <div class="live-price-box animate">
+
+      <h3>Nuvarande elpris</h3>
+
+      <div class="live-price" id="livePrice">
+        Hämtar...
+      </div>
+
+      <p class="live-zone">
+        Elområde SE3
+      </p>
+
+    </div>
+
+
+    <!-- GRAF -->
+    <div class="electricity-chart animate">
+
+      <h3>Pris idag</h3>
+
+      <canvas id="priceChart"></canvas>
+
+    </div>
+
+  </div>
+
+</section>
   <!-- =====================================================
        KONTAKT
   ====================================================== -->

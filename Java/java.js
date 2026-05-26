@@ -347,3 +347,188 @@ function closeMenu(){
   navLinks.classList.remove("open");
 
 }
+
+/* =====================================================
+   LIVE ELPRIS API
+===================================================== */
+
+/*
+  Hämtar nuvarande elpris.
+*/
+fetch("https://www.elprisetjustnu.se/api/v1/prices/current.json?zone=SE3")
+
+  .then(response => response.json())
+
+  .then(data => {
+
+    document.getElementById("livePrice")
+      .textContent =
+        data.SEK_per_kWh.toFixed(2) + " kr/kWh";
+
+  })
+
+  .catch(error => {
+
+    document.getElementById("livePrice")
+      .textContent = "Kunde inte hämta elpris";
+
+    console.error(error);
+
+  });
+
+
+
+
+/* =====================================================
+   GRAF ÖVER DAGENS ELPRIS
+===================================================== */
+
+/*
+  Hämtar dagens datum automatiskt.
+*/
+const today = new Date();
+
+const year = today.getFullYear();
+
+const month =
+  String(today.getMonth() + 1)
+  .padStart(2, "0");
+
+const day =
+  String(today.getDate())
+  .padStart(2, "0");
+
+
+/*
+  API-format:
+  YYYY-MM-DD_SE3.json
+*/
+const apiUrl =
+  `https://www.elprisetjustnu.se/api/v1/prices/${year}-${month}-${day}_SE3.json`;
+
+
+/*
+  Hämtar dagens priser.
+*/
+fetch(apiUrl)
+
+  .then(response => response.json())
+
+  .then(data => {
+
+    /*
+      Tider för X-axeln.
+    */
+    const labels = data.map(price =>
+
+      price.time_start.substring(11,16)
+
+    );
+
+
+    /*
+      Prisdata.
+    */
+    const prices = data.map(price =>
+
+      price.SEK_per_kWh
+
+    );
+
+
+    /*
+      Skapar grafen.
+    */
+    new Chart(
+
+      document.getElementById("priceChart"),
+
+      {
+
+        type:"line",
+
+        data:{
+
+          labels:labels,
+
+          datasets:[{
+
+            label:"kr/kWh",
+
+            data:prices,
+
+            borderColor:"#1565c0",
+
+            backgroundColor:"rgba(79,195,247,0.15)",
+
+            fill:true,
+
+            tension:0.35
+
+          }]
+
+        },
+
+        options:{
+
+          responsive:true,
+
+          plugins:{
+            legend:{
+              display:false
+            }
+          },
+
+          scales:{
+
+            y:{
+              beginAtZero:false
+            }
+
+          }
+
+        }
+
+      }
+
+    );
+
+  })
+
+  .catch(error => {
+
+    console.error(error);
+
+  });
+
+  /* =====================================================
+   LIVE ELPRIS API
+===================================================== */
+
+/*
+  Hämtar nuvarande elpris.
+*/
+fetch("https://www.elprisetjustnu.se/api/v1/prices/current.json?zone=SE3")
+
+  .then(response => response.json())
+
+  .then(data => {
+
+    document.getElementById("livePrice")
+      .textContent =
+        data.SEK_per_kWh.toFixed(2) + " kr/kWh";
+
+  })
+
+  .catch(error => {
+
+    document.getElementById("livePrice")
+      .textContent = "Kunde inte hämta elpris";
+
+    console.error(error);
+
+  });
+
+
+
+
