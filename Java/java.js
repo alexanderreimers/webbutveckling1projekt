@@ -2,21 +2,10 @@
    SCROLL-ANIMATIONER
 ===================================================== */
 
-/*
-  IntersectionObserver håller koll på när
-  element syns på skärmen.
-
-  När ett element kommer in i viewporten
-  läggs klassen "in" till.
-*/
 const observer = new IntersectionObserver((entries) => {
 
   entries.forEach(entry => {
 
-    /*
-      isIntersecting = true
-      betyder att elementet är synligt.
-    */
     if(entry.isIntersecting){
 
       entry.target.classList.add("in");
@@ -29,11 +18,6 @@ const observer = new IntersectionObserver((entries) => {
   threshold:0.15
 });
 
-
-/*
-  Vi väljer alla element som har
-  klassen "animate".
-*/
 document.querySelectorAll(".animate").forEach(element => {
 
   observer.observe(element);
@@ -41,23 +25,12 @@ document.querySelectorAll(".animate").forEach(element => {
 });
 
 
-
 /* =====================================================
    KALKYLATOR
 ===================================================== */
 
-/*
-  Funktionen körs när användaren klickar
-  på "Beräkna".
-*/
 function calculateSavings(){
 
-  /*
-    parseFloat gör om text till nummer.
-
-    || 0 betyder:
-    Om inputfältet är tomt används 0 istället.
-  */
   const consumption =
     parseFloat(
       document.getElementById("consumption").value
@@ -83,50 +56,27 @@ function calculateSavings(){
      BERÄKNINGAR
   ========================================== */
 
-  /*
-    Ungefärlig årsproduktion:
-
-    1 m² ≈ 150 kWh/år
-  */
   const production =
     area * 150 * regionFactor;
 
 
-  /*
-    Hur stor del av hushållets
-    elförbrukning som täcks.
-
-    Math.min används för att
-    värdet aldrig ska bli över 100%.
-  */
   const coverage = consumption > 0
     ? Math.min(production / consumption, 1)
     : 0;
 
 
-  /*
-    Pengar som sparas per år.
-  */
   const yearlySaving =
     production * price;
 
 
-  /*
-    Väldigt förenklad installationskostnad.
-  */
   const installationCost =
     area * 2000;
 
 
-  /*
-    Återbetalningstid i år.
-
-    toFixed(1) rundar till 1 decimal.
-  */
   const paybackTime =
-  yearlySaving > 0
-    ? (installationCost / yearlySaving).toFixed(1)
-    : "–";
+    yearlySaving > 0
+      ? (installationCost / yearlySaving).toFixed(1)
+      : "–";
 
 
   /* =========================================
@@ -152,35 +102,23 @@ function calculateSavings(){
 
 
   document.getElementById("paybackResult")
-  .textContent =
-    paybackTime + " år";
+    .textContent =
+      paybackTime + " år";
 
 
-  /*
-    Gör resultatboxen synlig.
-  */
   document.getElementById("resultBox")
     .classList.add("show");
 
 
-  /*
-    Uppdaterar diagrammet.
-  */
   updateChart(consumption, production);
 
 }
 
 
-
 /* =====================================================
-   CHART.JS
+   KALKYLATOR-GRAF
 ===================================================== */
 
-/*
-  Fördelning över årets månader.
-
-  Totalt = 100%
-*/
 const consumptionProfile = [
   0.11,0.10,0.10,0.08,
   0.07,0.06,0.06,0.06,
@@ -193,8 +131,6 @@ const solarProfile = [
   0.09,0.07,0.04,0.05
 ];
 
-
-/* Månader */
 const months = [
   "Jan","Feb","Mar","Apr",
   "Maj","Jun","Jul","Aug",
@@ -202,17 +138,11 @@ const months = [
 ];
 
 
-/*
-  Hämtar canvas-elementet.
-*/
 const ctx =
   document.getElementById("energyChart")
   .getContext("2d");
 
 
-/*
-  Skapar diagrammet.
-*/
 const chart = new Chart(ctx,{
 
   type:"bar",
@@ -266,10 +196,6 @@ const chart = new Chart(ctx,{
 });
 
 
-/*
-  Uppdaterar diagrammet
-  efter användarens siffror.
-*/
 function updateChart(yearlyConsumption, yearlyProduction){
 
   chart.data.datasets[0].data =
@@ -289,38 +215,25 @@ function updateChart(yearlyConsumption, yearlyProduction){
 }
 
 
-
 /* =====================================================
    KONTAKTFORMULÄR
 ===================================================== */
 
-/*
-  Hindrar sidan från att laddas om
-  när formuläret skickas.
-*/
 function sendForm(event){
 
   event.preventDefault();
 
-  /*
-    Enkel feedback till användaren.
-  */
   alert("Tack! Vi kontaktar dig inom 24 timmar.");
 
-  /*
-    Rensar formuläret.
-  */
   event.target.reset();
 
 }
-
 
 
 /* =====================================================
    MOBILMENY
 ===================================================== */
 
-/* Hämtar elementen */
 const menuBtn =
   document.getElementById("menuBtn");
 
@@ -328,9 +241,6 @@ const navLinks =
   document.getElementById("navLinks");
 
 
-/*
-  Öppnar/stänger menyn.
-*/
 menuBtn.addEventListener("click", () => {
 
   navLinks.classList.toggle("open");
@@ -338,24 +248,20 @@ menuBtn.addEventListener("click", () => {
 });
 
 
-/*
-  Stänger menyn när man klickar
-  på en länk.
-*/
 function closeMenu(){
 
   navLinks.classList.remove("open");
 
 }
 
+
 /* =====================================================
    LIVE ELPRIS API
 ===================================================== */
 
-/*
-  Hämtar nuvarande elpris.
-*/
-fetch("https://www.elprisetjustnu.se/api/v1/prices/current.json?zone=SE3")
+fetch(
+  "https://www.elprisetjustnu.se/api/v1/prices/current.json?zone=SE3"
+)
 
   .then(response => response.json())
 
@@ -363,32 +269,30 @@ fetch("https://www.elprisetjustnu.se/api/v1/prices/current.json?zone=SE3")
 
     document.getElementById("livePrice")
       .textContent =
-        data.SEK_per_kWh.toFixed(2) + " kr/kWh";
+        data.SEK_per_kWh.toFixed(2)
+        + " kr/kWh";
 
   })
 
   .catch(error => {
 
     document.getElementById("livePrice")
-      .textContent = "Kunde inte hämta elpris";
+      .textContent =
+        "Kunde inte hämta elpris";
 
     console.error(error);
 
   });
 
 
-
-
 /* =====================================================
    GRAF ÖVER DAGENS ELPRIS
 ===================================================== */
 
-/*
-  Hämtar dagens datum automatiskt.
-*/
 const today = new Date();
 
-const year = today.getFullYear();
+const year =
+  today.getFullYear();
 
 const month =
   String(today.getMonth() + 1)
@@ -399,26 +303,16 @@ const day =
   .padStart(2, "0");
 
 
-/*
-  API-format:
-  YYYY-MM-DD_SE3.json
-*/
 const apiUrl =
   `https://www.elprisetjustnu.se/api/v1/prices/${year}-${month}-${day}_SE3.json`;
 
 
-/*
-  Hämtar dagens priser.
-*/
 fetch(apiUrl)
 
   .then(response => response.json())
 
   .then(data => {
 
-    /*
-      Tider för X-axeln.
-    */
     const labels = data.map(price =>
 
       price.time_start.substring(11,16)
@@ -426,9 +320,6 @@ fetch(apiUrl)
     );
 
 
-    /*
-      Prisdata.
-    */
     const prices = data.map(price =>
 
       price.SEK_per_kWh
@@ -436,57 +327,80 @@ fetch(apiUrl)
     );
 
 
-    /*
-      Skapar grafen.
-    */
     const priceCtx =
-  document.getElementById("priceChart")
-  .getContext("2d");
+      document.getElementById("priceChart")
+      .getContext("2d");
 
-  new Chart(
 
-  priceCtx,
+    new Chart(priceCtx,{
 
-      {
+      type:"line",
 
-        type:"line",
+      data:{
 
-        data:{
+        labels:labels,
 
-          labels:labels,
+        datasets:[{
 
-          datasets:[{
+          label:"kr/kWh",
 
-            label:"kr/kWh",
+          data:prices,
 
-            data:prices,
+          borderColor:"#4fc3f7",
 
-            borderColor:"#1565c0",
+          backgroundColor:
+            "rgba(79,195,247,0.15)",
 
-            backgroundColor:"rgba(79,195,247,0.15)",
+          fill:true,
 
-            fill:true,
+          tension:0.35,
 
-            tension:0.35
+          pointRadius:3,
 
-          }]
+          pointBackgroundColor:"#ffffff"
+
+        }]
+
+      },
+
+      options:{
+
+        responsive:true,
+
+        maintainAspectRatio:false,
+
+        plugins:{
+
+          legend:{
+            display:false
+          }
 
         },
 
-        options:{
+        scales:{
 
-          responsive:true,
+          x:{
 
-          plugins:{
-            legend:{
-              display:false
+            ticks:{
+              color:"#ffffff"
+            },
+
+            grid:{
+              color:"rgba(255,255,255,0.08)"
             }
+
           },
 
-          scales:{
+          y:{
 
-            y:{
-              beginAtZero:false
+            beginAtZero:false,
+
+            ticks:{
+              color:"#ffffff"
+            },
+
+            grid:{
+              color:"rgba(255,255,255,0.08)"
             }
 
           }
@@ -495,41 +409,16 @@ fetch(apiUrl)
 
       }
 
+    });
+
+  })
+
+  .catch(error => {
+
+    console.error(
+      "Fel vid hämtning av elprisgraf:",
+      error
     );
-
-  })
-
-  .catch(error => {
-
-    console.error(error);
-
-  });
-
-  /* =====================================================
-   LIVE ELPRIS API
-===================================================== */
-
-/*
-  Hämtar nuvarande elpris.
-*/
-fetch("https://www.elprisetjustnu.se/api/v1/prices/current.json?zone=SE3")
-
-  .then(response => response.json())
-
-  .then(data => {
-
-    document.getElementById("livePrice")
-      .textContent =
-        data.SEK_per_kWh.toFixed(2) + " kr/kWh";
-
-  })
-
-  .catch(error => {
-
-    document.getElementById("livePrice")
-      .textContent = "Kunde inte hämta elpris";
-
-    console.error(error);
 
   });
 
