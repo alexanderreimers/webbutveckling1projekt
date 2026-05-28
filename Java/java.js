@@ -439,9 +439,13 @@ fetch(apiUrl)
     /*
       Skapar grafen.
     */
-    new Chart(
+    const priceCtx =
+  document.getElementById("priceChart")
+  .getContext("2d");
 
-      document.getElementById("priceChart"),
+  new Chart(
+
+  priceCtx,
 
       {
 

@@ -1,28 +1,68 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
-  <!-- Grundinställningar -->
+
+  <!-- =====================================================
+       GRUNDINSTÄLLNINGAR
+  ====================================================== -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>EasySolar – Smarta energilösningar</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>
+    EasySolar – Smarta energilösningar
+  </title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Chart.js -->
+  <!-- =====================================================
+       GOOGLE FONTS
+  ====================================================== -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- =====================================================
+       CHART.JS
+  ====================================================== -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <!-- Egen CSS -->
-  <link rel="stylesheet" href="../Css/style.css">
 
-  <!-- Favicon -->
-  <link rel="icon" href="../Images/blixt.png">
+  <!-- =====================================================
+       EGEN CSS
+  ====================================================== -->
+  <link
+    rel="stylesheet"
+    href="../Css/style.css"
+  >
+
+
+  <!-- =====================================================
+       FAVICON
+  ====================================================== -->
+  <link
+    rel="icon"
+    href="../Images/blixt.png"
+  >
 
 </head>
+
 
 <body>
 
@@ -36,28 +76,67 @@
       Easy<span>Solar</span>
     </div>
 
-    <!-- Hamburgerikon för mobil -->
-    <button class="menu-btn" id="menuBtn" aria-label="Öppna meny">
+
+    <!-- Hamburgerikon -->
+    <button
+      class="menu-btn"
+      id="menuBtn"
+      aria-label="Öppna meny"
+    >
+
       <span></span>
       <span></span>
       <span></span>
+
     </button>
+
 
     <!-- Menylänkar -->
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about" onclick="closeMenu()">Om oss</a></li>
-      <li><a href="#cases" onclick="closeMenu()">Kundfall</a></li>
-      <li><a href="#calculator" onclick="closeMenu()">Kalkylator</a></li>
-      <li><a href="#contact" onclick="closeMenu()">Kontakt</a></li>
-      <li><a href="#automation" onclick="closemenu()">Automation</a></li>
-      <li><a href="#electricity" onclick="closeMenu()">Elpris</a></li>
+
+      <li>
+        <a href="#about" onclick="closeMenu()">
+          Om oss
+        </a>
+      </li>
+
+      <li>
+        <a href="#cases" onclick="closeMenu()">
+          Kundfall
+        </a>
+      </li>
+
+      <li>
+        <a href="#automation" onclick="closeMenu()">
+          Automation
+        </a>
+      </li>
+
+      <li>
+        <a href="#calculator" onclick="closeMenu()">
+          Kalkylator
+        </a>
+      </li>
+
+      <li>
+        <a href="#electricity" onclick="closeMenu()">
+          Elpris
+        </a>
+      </li>
+
+      <li>
+        <a href="#contact" onclick="closeMenu()">
+          Kontakt
+        </a>
+      </li>
+
     </ul>
 
   </nav>
 
 
   <!-- =====================================================
-       HERO-SEKTION
+       HERO
   ====================================================== -->
   <header class="hero">
 
@@ -73,18 +152,28 @@
       </h1>
 
       <p class="hero-text">
-        Vi hjälper hushåll och företag att förstå sin energianvändning
-        och hitta smartare lösningar som sparar både pengar och miljö.
+        Vi hjälper hushåll och företag att förstå
+        sin energianvändning och hitta smartare
+        lösningar som sparar både pengar och miljö.
       </p>
 
+
       <div class="hero-buttons">
-        <a href="#calculator" class="btn primary-btn">
+
+        <a
+          href="#calculator"
+          class="btn primary-btn"
+        >
           Beräkna besparing
         </a>
 
-        <a href="#cases" class="btn secondary-btn">
+        <a
+          href="#cases"
+          class="btn secondary-btn"
+        >
           Se kundfall
         </a>
+
       </div>
 
     </div>
@@ -95,11 +184,14 @@
   <!-- =====================================================
        OM OSS
   ====================================================== -->
-  <section class="about section" id="about">
+  <section
+    class="about section"
+    id="about"
+  >
 
     <div class="about-grid">
 
-      <!-- Textinnehåll -->
+      <!-- Text -->
       <div class="animate">
 
         <p class="section-label">
@@ -111,33 +203,61 @@
         </h2>
 
         <p class="section-text">
-          EasySolar skapades med målet att göra energibesparing
-          enkelt att förstå för alla.
-          Vi kombinerar smart teknik med personlig rådgivning
-          för att skapa lösningar som faktiskt fungerar i vardagen.
+          EasySolar skapades med målet att göra
+          energibesparing enkelt att förstå för alla.
+          Vi kombinerar smart teknik med personlig
+          rådgivning för att skapa lösningar som
+          faktiskt fungerar i vardagen.
         </p>
+
 
         <!-- Informationskort -->
         <div class="feature-grid">
 
           <div class="feature-card">
+
             <h4>Solcellsanalys</h4>
-            <p>Vi analyserar takets potential och möjlig produktion.</p>
+
+            <p>
+              Vi analyserar takets potential
+              och möjlig produktion.
+            </p>
+
           </div>
 
+
           <div class="feature-card">
+
             <h4>Förbrukningsdata</h4>
-            <p>Få tydlig överblick över din elanvändning.</p>
+
+            <p>
+              Få tydlig överblick över
+              din elanvändning.
+            </p>
+
           </div>
 
+
           <div class="feature-card">
+
             <h4>Smarta råd</h4>
-            <p>Konkreta tips som minskar energikostnader.</p>
+
+            <p>
+              Konkreta tips som minskar
+              energikostnader.
+            </p>
+
           </div>
 
+
           <div class="feature-card">
+
             <h4>Support</h4>
-            <p>Personlig hjälp hela vägen.</p>
+
+            <p>
+              Personlig hjälp hela vägen.
+            </p>
+
           </div>
 
         </div>
@@ -145,20 +265,16 @@
       </div>
 
 
-      <!-- Illustration -->
+      <!-- Bild -->
       <div class="animate">
 
-  <div class="sun-box">
+        <div class="sun-box">
 
-    <img
-      src="../Images/Solcell.png"
-      alt="Solpanel"
-      class="solar-image"
-    >
-
-  </div>
-
-</div>
+          <img
+            src="../Images/Solcell.png"
+            alt="Solpanel"
+            class="solar-image"
+          >
 
         </div>
 
@@ -172,7 +288,10 @@
   <!-- =====================================================
        KUNDFALL
   ====================================================== -->
-  <section class="cases section" id="cases">
+  <section
+    class="cases section"
+    id="cases"
+  >
 
     <div class="animate">
 
@@ -186,6 +305,7 @@
 
     </div>
 
+
     <div class="case-grid">
 
       <!-- Kort 1 -->
@@ -198,12 +318,15 @@
           <h3>Villa i Göteborg</h3>
 
           <p>
-            Familjen Lindqvist installerade solceller och batterilagring.
+            Familjen Lindqvist installerade
+            solceller och batterilagring.
           </p>
 
           <div class="case-result">
 
-            <span class="number">62%</span>
+            <span class="number">
+              62%
+            </span>
 
             <span class="small-text">
               lägre elkostnad
@@ -226,12 +349,15 @@
           <h3>Industrilokal i Malmö</h3>
 
           <p>
-            Smart energistyrning minskade företagets kostnader kraftigt.
+            Smart energistyrning minskade
+            företagets kostnader kraftigt.
           </p>
 
           <div class="case-result">
 
-            <span class="number">180 000 kr</span>
+            <span class="number">
+              180 000 kr
+            </span>
 
             <span class="small-text">
               sparat första året
@@ -254,12 +380,15 @@
           <h3>BRF i Stockholm</h3>
 
           <p>
-            Gemensam solel för 48 lägenheter gav snabb återbetalning.
+            Gemensam solel för 48 lägenheter
+            gav snabb återbetalning.
           </p>
 
           <div class="case-result">
 
-            <span class="number">2-3 år</span>
+            <span class="number">
+              2–3 år
+            </span>
 
             <span class="small-text">
               återbetalningstid
@@ -274,51 +403,75 @@
     </div>
 
   </section>
+
+
   <!-- =====================================================
-     AUTOMATISK STYRNING
-===================================================== -->
-  <section class="automation section" id="automation">
+       AUTOMATION
+  ====================================================== -->
+  <section
+    class="automation section"
+    id="automation"
+  >
 
-          <div class="automation-content animate">
+    <div class="automation-content animate">
 
-    <p class="section-label light">
-      Smart energistyrning
-    </p>
+      <p class="section-label light">
+        Smart energistyrning
+      </p>
 
-    <h2 class="automation-title">
-      AUTOMATISK STYRNING
-    </h2>
+      <h2 class="automation-title">
+        AUTOMATISK STYRNING
+      </h2>
 
-    <div class="automation-line"></div>
+      <div class="automation-line"></div>
 
-    <p class="automation-text">
-      Tänk dig att din värmepump automatiskt anpassar sig
-      för att undvika effektavgifter, medan ditt hembatteri
-      laddas upp med dygnets lägsta elpriser och sedan används
-      när elpriset och effektavgifterna är som högst.
-      EasySolar gör detta möjligt – och du sparar tid och pengar varje dag.
-    </p>
+      <p class="automation-text">
 
-    <ul class="automation-list">
+        Tänk dig att din värmepump automatiskt
+        anpassar sig för att undvika effektavgifter,
+        medan ditt hembatteri laddas upp med
+        dygnets lägsta elpriser och sedan används
+        när elpriset och effektavgifterna är som högst.
 
-      <li>Kapning av effekttoppar</li>
+        EasySolar gör detta möjligt – och du sparar
+        tid och pengar varje dag.
 
-      <li>Kostnadseffektiv uppvärmning</li>
+      </p>
 
-      <li>Användning och lagring av el från solceller</li>
 
-      <li>Elprisoptimerad laddning av hembatteri & elbil</li>
+      <ul class="automation-list">
 
-    </ul>
+        <li>
+          Kapning av effekttoppar
+        </li>
 
-  </div>
+        <li>
+          Kostnadseffektiv uppvärmning
+        </li>
 
-</section>
+        <li>
+          Användning och lagring av el från solceller
+        </li>
+
+        <li>
+          Elprisoptimerad laddning
+          av hembatteri & elbil
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
 
   <!-- =====================================================
        KALKYLATOR
   ====================================================== -->
-  <section class="calculator section" id="calculator">
+  <section
+    class="calculator section"
+    id="calculator"
+  >
 
     <div class="animate">
 
@@ -335,52 +488,57 @@
 
     <div class="calculator-layout">
 
-      <!-- FORMULÄR -->
+      <!-- Form -->
       <div>
 
         <div class="calc-form">
 
-          <!-- Årsförbrukning -->
           <div>
 
             <label for="consumption">
-              Årsförbrukning (kWh)
+              <!-- Årsförbrukning --> (kWh)
             </label>
 
-            <input type="number"
-                   id="consumption"
-                   placeholder="20000">
+            <input
+              type="number"
+              id="consumption"
+              placeholder="20000"
+            >
 
           </div>
 
-          <!-- Elpris -->
+
           <div>
 
             <label for="price">
               Elpris (kr/kWh)
             </label>
 
-            <input type="number"
-                   id="price"
-                   placeholder="1.50"
-                   step="0.01">
+            <input
+              type="number"
+              id="price"
+              placeholder="1.50"
+              step="0.01"
+            >
 
           </div>
 
-          <!-- Takyta -->
+
           <div>
 
             <label for="area">
               Takyta för solceller (m²)
             </label>
 
-            <input type="number"
-                   id="area"
-                   placeholder="40">
+            <input
+              type="number"
+              id="area"
+              placeholder="40"
+            >
 
           </div>
 
-          <!-- Region -->
+
           <div>
 
             <label for="region">
@@ -405,8 +563,11 @@
 
           </div>
 
-          <!-- Beräkningsknapp -->
-          <button class="calculate-btn" onclick="calculateSavings()">
+
+          <button
+            class="calculate-btn"
+            onclick="calculateSavings()"
+          >
             Beräkna
           </button>
 
@@ -441,7 +602,7 @@
       </div>
 
 
-      <!-- GRAF -->
+      <!-- Diagram -->
       <div class="chart-container animate">
 
         <h3>
@@ -456,63 +617,82 @@
 
   </section>
 
-<!-- =====================================================
-     LIVE ELPRISER
-===================================================== -->
-<section class="electricity section" id="electricity">
 
-  <div class="animate">
+  <!-- =====================================================
+       LIVE ELPRIS
+  ====================================================== -->
+  <section
+    class="electricity section"
+    id="electricity"
+  >
 
-    <p class="section-label">
-      Live elmarknad
-    </p>
+    <div class="animate">
 
-    <h2 class="section-title">
-      Dagens elpriser
-    </h2>
+      <p class="section-label">
+        Live elmarknad
+      </p>
 
-    <p class="section-text electricity-text">
-      Följ dagens elpris i realtid och se hur priserna
-      förändras under dygnet i elområde SE3.
-    </p>
+      <h2 class="section-title">
+        Dagens elpriser
+      </h2>
 
-  </div>
+      <p class="section-text electricity-text">
 
+        Följ dagens elpris i realtid
+        och se hur priserna förändras
+        under dygnet i elområde SE3.
 
-  <div class="electricity-layout">
-
-    <!-- LIVE PRIS -->
-    <div class="live-price-box animate">
-
-      <h3>Nuvarande elpris</h3>
-
-      <div class="live-price" id="livePrice">
-        Hämtar...
-      </div>
-
-      <p class="live-zone">
-        Elområde SE3
       </p>
 
     </div>
 
 
-    <!-- GRAF -->
-    <div class="electricity-chart animate">
+    <div class="electricity-layout">
 
-      <h3>Pris idag</h3>
+      <!-- Livepris -->
+      <div class="live-price-box animate">
 
-      <canvas id="priceChart"></canvas>
+        <h3>
+          Nuvarande elpris
+        </h3>
+
+        <div
+          class="live-price"
+          id="livePrice"
+        >
+          Hämtar...
+        </div>
+
+        <p class="live-zone">
+          Elområde SE3
+        </p>
+
+      </div>
+
+
+      <!-- Graf -->
+      <div class="electricity-chart animate">
+
+        <h3>
+          Pris idag
+        </h3>
+
+        <canvas id="priceChart"></canvas>
+
+      </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+
   <!-- =====================================================
        KONTAKT
   ====================================================== -->
-  <section class="contact section" id="contact">
+  <section
+    class="contact section"
+    id="contact"
+  >
 
     <p class="section-label">
       Kontakt
@@ -523,22 +703,36 @@
     </h2>
 
     <p class="contact-text">
-      Skicka en förfrågan så kontaktar vi dig inom 24 timmar.
+      Skicka en förfrågan så kontaktar
+      vi dig inom 24 timmar.
     </p>
 
-    <form class="contact-form" onsubmit="sendForm(event)">
 
-      <input type="text"
-             placeholder="Namn"
-             required>
+    <form
+      class="contact-form"
+      onsubmit="sendForm(event)"
+    >
 
-      <input type="email"
-             placeholder="E-post"
-             required>
+      <input
+        type="text"
+        placeholder="Namn"
+        required
+      >
 
-      <textarea placeholder="Berätta om ditt energibehov..."></textarea>
+      <input
+        type="email"
+        placeholder="E-post"
+        required
+      >
 
-      <button type="submit" class="send-btn">
+      <textarea
+        placeholder="Berätta om ditt energibehov..."
+      ></textarea>
+
+      <button
+        type="submit"
+        class="send-btn"
+      >
         Skicka
       </button>
 
@@ -559,8 +753,11 @@
   </footer>
 
 
-  <!-- Egen JavaScript -->
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
   <script src="../Java/java.js"></script>
 
 </body>
+
 </html>
