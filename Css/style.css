@@ -290,7 +290,7 @@ body {
 
 
 /* =====================================================
-   ABOUT
+   Om oss
 ===================================================== */
 .about-grid {
 
@@ -853,16 +853,22 @@ textarea:focus {
 }
 
 
-.contact-form {
-
-  max-width: 600px;
-
-  margin: auto;
-
+.contact-layout {
   display: grid;
-
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+  text-align: left;
+}
+.contact-form {
+  display: grid;
   gap: 18px;
-
+}
+#contactMap {
+  height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.12);
 }
 
 
@@ -975,11 +981,13 @@ footer {
 
 /* MOBILE */
 @media (max-width: 900px) {
-
-  .electricity-layout {
+  .electricity-layout,
+  .contact-layout {
     grid-template-columns: 1fr;
   }
-
+  #contactMap {
+    height: 300px;
+  }
 }
 
 

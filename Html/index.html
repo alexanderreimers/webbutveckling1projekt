@@ -271,9 +271,17 @@
         <div class="sun-box">
 
           <img
-            src="../Images/Solcell.png"
-            alt="Solpanel"
-            class="solar-image"
+              src="../Images/Solcell.png"
+              srcset="
+                ../Images/Solcell-400.png 400w,
+                ../Images/Solcell-800.png 800w,
+                ../Images/Solcell-1200.png 1200w
+  
+                "
+                sizes="(max-width: 640px) 100vw, 420px"
+                loading="lazy"
+                alt="Solpanel"
+                class="solar-image"
           >
 
         </div>
@@ -707,36 +715,34 @@
       vi dig inom 24 timmar.
     </p>
 
-
-    <form
-      class="contact-form"
-      onsubmit="sendForm(event)"
-    >
-
-      <input
-        type="text"
-        placeholder="Namn"
-        required
+    <div class="contact-layout">
+      <form
+        class="contact-form"
+        onsubmit="sendForm(event)"
       >
-
-      <input
-        type="email"
-        placeholder="E-post"
-        required
-      >
-
-      <textarea
-        placeholder="Berätta om ditt energibehov..."
-      ></textarea>
-
-      <button
-        type="submit"
-        class="send-btn"
-      >
-        Skicka
-      </button>
-
-    </form>
+        <input
+          type="text"
+          placeholder="Namn"
+          required
+        >
+        <input
+          type="email"
+          placeholder="E-post"
+          required
+        >
+        <textarea
+          placeholder="Berätta om ditt energibehov..."
+        ></textarea>
+        <button
+          type="submit"
+          class="send-btn"
+        >
+          Skicka
+        </button>
+      </form>
+      <!-- Karta -->
+      <div id="contactMap"></div>
+    </div>
 
   </section>
 
@@ -757,6 +763,18 @@
        JAVASCRIPT
   ====================================================== -->
   <script src="../Java/java.js"></script>
+
+  
+   <!-- =====================================================
+       LEAFLET (OpenStreetMap)
+  ====================================================== -->
+  <link
+    rel="stylesheet"
+    href="
+      https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+  />
+  <script src="
+      https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>;
 
 </body>
 

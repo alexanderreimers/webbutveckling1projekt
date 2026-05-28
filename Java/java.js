@@ -264,7 +264,7 @@ const year = today.getFullYear();
 const month = String(today.getMonth() + 1).padStart(2, "0"); 
 const day = String(today.getDate()).padStart(2, "0"); 
 
-const apiUrl = `https://www.elprisetjustnu.se/api/v1/prices/${year}-${month}-${day}_SE3.json`;
+const apiUrl = `https://www.elprisetjustnu.se/api/v1/prices/${year}/${month}-${day}_SE3.json`;
 
 fetch(apiUrl)
   .then(response => {
@@ -347,6 +347,22 @@ fetch(apiUrl)
   .catch(error => {
     console.error("Fel vid hämtning av prisgraf:", error);
   });
+
+/* =====================================================
+   KARTA – ÅVA GYMNASIUM
+===================================================== */
+const map = L.map("contactMap").setView([59.440671, 18.062999], 15);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 19,
+  attribution:
+    '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>;'
+  }).addTo(map);
+  L.marker([59.440671, 18.062999])
+  .addTo(map)
+  .bindPopup(
+    "<strong>EasySolar</strong><br>Åva skolgränd 1–3<br>Täby"
+  )
+  .openPopup();
 
 
 
