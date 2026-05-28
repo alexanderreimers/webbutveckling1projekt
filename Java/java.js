@@ -255,6 +255,17 @@ function closeMenu(){
 
 }
 
+// Kalkylator-knappen
+document.querySelector(".calculate-btn")
+  .addEventListener("click", calculateSavings);
+
+// Kontaktformuläret
+document.querySelector(".contact-form")
+  .addEventListener("submit", sendForm);
+
+// Navigationslänkarna (stäng mobilmeny)
+document.querySelectorAll(".nav-links a")
+  .forEach(link => link.addEventListener("click", closeMenu));
 
 /* =====================================================
    LIVE ELPRIS & GRAF (Korrigerad ordning)
@@ -292,9 +303,6 @@ fetch(apiUrl)
     return response.json();
   })
   .then(data => {
-  /*const hourly = data.filter((_, i) => i % 4 === 0);
-  const labels = hourly.map(price => price.time_start.substring(11, 16));
-  const prices = hourly.map(price => price.SEK_per_kWh);*/
   const labels = data.map(price => price.time_start.substring(11, 16));
   const prices = data.map(price => price.SEK_per_kWh);
 
