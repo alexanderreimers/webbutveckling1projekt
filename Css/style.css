@@ -3,19 +3,26 @@
 ===================================================== */
 :root {
 
+
   --darkBlue: #0a2540;
   --midBlue: #1565c0;
   --lightBlue: #4fc3f7;
 
+
   --lightBg: #e8f4fd;
   --white: #ffffff;
+
 
   --textDark: #0a2540;
   --textGray: #546e7a;
 
+
   --radius: 12px;
 
+
 }
+
+
 
 
 /* =====================================================
@@ -28,14 +35,20 @@
 }
 
 
+
+
 body {
+
 
   font-family: 'DM Sans', sans-serif;
   background: white;
   color: var(--textDark);
   line-height: 1.6;
 
+
 }
+
+
 
 
 /* =====================================================
@@ -43,60 +56,83 @@ body {
 ===================================================== */
 .navbar {
 
+
   position: sticky;
   top: 0;
+
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+
   background: var(--darkBlue);
+
 
   padding: 0 60px;
   height: 70px;
 
+
   z-index: 100;
+
 
 }
 
 
+
+
 /* LOGO */
 .logo {
+
 
   font-family: 'Syne', sans-serif;
   font-size: 1.6rem;
   font-weight: 800;
   color: white;
 
+
 }
+
 
 .logo span {
   color: var(--lightBlue);
 }
 
 
+
+
 /* MENYLÄNKAR */
 .nav-links {
+
 
   display: flex;
   gap: 36px;
 
+
   list-style: none;
+
 
 }
 
+
 .nav-links a {
+
 
   color: rgba(255,255,255,0.8);
   text-decoration: none;
 
+
   transition: 0.2s;
 
+
 }
+
 
 .nav-links a:hover {
   color: var(--lightBlue);
 }
+
+
 
 
 /* =====================================================
@@ -104,7 +140,9 @@ body {
 ===================================================== */
 .hero {
 
+
   position: relative;
+
 
   background:
    linear-gradient(
@@ -115,59 +153,86 @@ body {
     ),  
   url('../Images/Sundown.jpg') center / cover no-repeat;
 
+
   color: white;
+
 
   padding: 120px 60px;
 
+
   overflow: hidden;
 
+
 }
+
 
 /* HERO CONTENT */
 .hero-content {
 
+
   position: relative;
   max-width: 700px;
 
+
 }
+
+
 
 
 /* HERO TAG */
 .hero-tag {
 
+
   color: var(--lightBlue);
+
 
   text-transform: uppercase;
   letter-spacing: 2px;
 
+
   margin-bottom: 20px;
 
+
 }
+
+
 
 
 /* HERO RUBRIK */
 .hero h1 {
 
+
   font-family: 'Syne', sans-serif;
+
 
   font-size: 4rem;
   line-height: 1.1;
 
+
   margin-bottom: 24px;
 
+
 }
+
+
 
 
 /* HERO TEXT */
 .hero-text {
 
+
   max-width: 550px;
+
 
   margin-bottom: 40px;
 
+
   color: rgba(255,255,255,0.85);
 
+
 }
+
+
 
 
 /* =====================================================
@@ -175,45 +240,66 @@ body {
 ===================================================== */
 .btn {
 
+
   display: inline-block;
+
 
   padding: 14px 28px;
 
+
   border-radius: 12px;
+
 
   text-decoration: none;
 
+
   transition: 0.2s;
 
+
 }
+
 
 .btn:hover {
   transform: translateY(-2px);
 }
 
 
+
+
 /* PRIMÄR KNAPP */
 .primary-btn {
 
+
   background: var(--lightBlue);
+
 
   color: var(--darkBlue);
 
+
   font-weight: 700;
 
+
 }
+
+
 
 
 /* SEKUNDÄR KNAPP */
 .secondary-btn {
 
+
   border: 2px solid rgba(255,255,255,0.5);
+
 
   color: white;
 
+
   margin-left: 16px;
 
+
 }
+
+
 
 
 /* =====================================================
@@ -224,28 +310,43 @@ body {
 }
 
 
+
+
 .section-label {
+
 
   text-transform: uppercase;
 
+
   letter-spacing: 2px;
+
 
   color: var(--midBlue);
 
+
   margin-bottom: 12px;
 
+
 }
+
+
 
 
 .section-title {
 
+
   font-family: 'Syne', sans-serif;
+
 
   font-size: 2.5rem;
 
+
   margin-bottom: 20px;
 
+
 }
+
+
 
 
 .section-text {
@@ -253,88 +354,129 @@ body {
 }
 
 
+
+
 /* =====================================================
    Om oss
 ===================================================== */
 .about-grid {
 
+
   display: grid;
+
 
   grid-template-columns: 1fr 1fr;
 
+
   gap: 60px;
+
 
   align-items: center;
 
+
 }
+
+
 
 
 /* FEATURE GRID */
 .feature-grid {
 
+
   display: grid;
+
 
   grid-template-columns: 1fr 1fr;
 
+
   gap: 20px;
+
 
   margin-top: 36px;
 
+
 }
+
+
 
 
 /* FEATURE CARD */
 .feature-card {
 
+
   background: var(--lightBg);
+
 
   padding: 20px;
 
+
   border-radius: 12px;
+
 
   border-left: 4px solid var(--midBlue);
 
+
 }
+
+
 
 
 /* SOLBOX */
 .sun-box {
 
+
   display: flex;
   justify-content: center;
   align-items: center;
 
+
   background: var(--lightBg);
+
 
   border-radius: 24px;
 
+
   padding: 30px;
+
 
   min-height: 420px;
 
+
   overflow: hidden;
 
+
 }
+
+
 
 
 /* SOLBILD */
 .solar-image {
 
+
   width: 100%;
+
 
   max-width: 420px;
 
+
   height: auto;
+
 
   object-fit: contain;
 
+
   transition: 0.3s;
 
+
 }
+
 
 .solar-image:hover {
   transform: scale(1.03);
 }
+
+
 
 
 /* =====================================================
@@ -345,39 +487,57 @@ body {
 }
 
 
+
+
 .case-grid {
+
 
   display: grid;
 
+
   grid-template-columns: repeat(3,1fr);
+
 
   gap: 28px;
 
+
 }
+
+
 
 
 /* CASE CARD */
 .case-card {
 
+
   background: white;
+
 
   border-radius: 12px;
 
+
   overflow: hidden;
+
 
   transition: 0.2s;
 
+
 }
+
 
 .case-card:hover {
   transform: translateY(-6px);
 }
 
 
+
+
 /* TOP LINE */
 .top-line {
 
+
   height: 8px;
+
 
   background:
     linear-gradient(
@@ -386,7 +546,10 @@ body {
       var(--lightBlue)
     );
 
+
 }
+
+
 
 
 /* CASE CONTENT */
@@ -395,38 +558,55 @@ body {
 }
 
 
+
+
 /* RESULT BOX */
 .case-result {
 
+
   background: var(--lightBg);
+
 
   margin-top: 20px;
 
+
   padding: 14px;
+
 
   border-radius: 10px;
 
+
 }
+
+
 
 
 /* STOR SIFFRA */
 .number {
 
+
   display: block;
+
 
   font-size: 2rem;
 
+
   font-weight: 700;
+
 
   color: var(--midBlue);
 
+
 }
+
+
 
 
 /* =====================================================
    AUTOMATISK STYRNING
 ===================================================== */
 .automation {
+
 
   background:
     linear-gradient(
@@ -435,9 +615,13 @@ body {
       #5a6db0
     );
 
+
   color: white;
 
+
 }
+
+
 
 
 .automation-content {
@@ -445,70 +629,107 @@ body {
 }
 
 
+
+
 .automation-title {
+
 
   font-family: 'Syne', sans-serif;
 
+
   font-size: 3rem;
+
 
   margin-bottom: 30px;
 
+
   color: white;
 
+
 }
+
+
 
 
 .automation-line {
 
+
   width: 100%;
   height: 4px;
 
+
   background: rgba(255,255,255,0.15);
+
 
   margin-bottom: 40px;
 
+
   border-radius: 10px;
 
+
 }
+
+
 
 
 .automation-text {
 
+
   font-size: 1.5rem;
+
 
   line-height: 1.8;
 
+
   color: rgba(255,255,255,0.92);
+
 
   max-width: 1400px;
 
+
   margin-bottom: 40px;
 
+
 }
+
+
 
 
 .automation-list {
 
+
   list-style: disc;
+
 
   padding-left: 40px;
 
+
   display: flex;
+
 
   flex-direction: column;
 
+
   gap: 18px;
 
+
 }
+
+
 
 
 .automation-list li {
 
+
   font-size: 1.4rem;
+
 
   color: white;
 
+
 }
+
+
 
 
 .section-label.light {
@@ -516,30 +737,44 @@ body {
 }
 
 
+
+
 /* =====================================================
    KALKYLATOR
 ===================================================== */
 .calculator-layout {
 
+
   display: grid;
+
 
   grid-template-columns: 1fr 1.4fr;
 
+
   gap: 50px;
 
+
 }
+
+
 
 
 /* FORM */
 .calc-form {
 
+
   display: flex;
+
 
   flex-direction: column;
 
+
   gap: 20px;
 
+
 }
+
+
 
 
 /* INPUTS */
@@ -547,66 +782,98 @@ input,
 select,
 textarea {
 
+
   width: 100%;
+
 
   padding: 12px 16px;
 
+
   border: 2px solid #d7e2eb;
+
 
   border-radius: 12px;
 
+
   font-family: 'DM Sans', sans-serif;
 
+
 }
+
+
 
 
 input:focus,
 select:focus,
 textarea:focus {
 
+
   outline: none;
+
 
   border-color: var(--midBlue);
 
+
 }
+
+
 
 
 /* BERÄKNA KNAPP */
 .calculate-btn {
 
+
   background: var(--midBlue);
+
 
   color: white;
 
+
   border: none;
+
 
   padding: 14px;
 
+
   border-radius: 12px;
+
 
   cursor: pointer;
 
+
 }
+
+
 
 
 /* RESULTATBOX */
 .result-box {
 
+
   display: none;
+
 
   flex-direction: column;
 
+
   gap: 12px;
+
 
   margin-top: 24px;
 
+
   background: var(--lightBg);
+
 
   padding: 24px;
 
+
   border-radius: 12px;
 
+
 }
+
+
 
 
 .result-box.show {
@@ -614,18 +881,27 @@ textarea:focus {
 }
 
 
+
+
 /* RESULTATRAD */
 .result-row {
 
+
   display: flex;
+
 
   justify-content: space-between;
 
+
   border-bottom: 1px solid #c8d8e7;
+
 
   padding-bottom: 10px;
 
+
 }
+
+
 
 
 /* =====================================================
@@ -633,19 +909,30 @@ textarea:focus {
 ===================================================== */
 .chart-container {
 
+
   background: var(--lightBg);
+
 
   padding: 28px;
 
-  border-radius: 12px;
 
-  /* PRICE CHART */
+  border-radius: 12px;
+}
+
+
+
+
+/* PRICE CHART */
 #priceChart {
   width: 100% !important;
   height: 320px !important;
 }
 
-}
+
+
+
+
+
 
 
 /* =====================================================
@@ -653,9 +940,12 @@ textarea:focus {
 ===================================================== */
 .electricity {
 
+
   position: relative;
 
+
   overflow: hidden;
+
 
   background:
     linear-gradient(
@@ -666,98 +956,144 @@ textarea:focus {
       #1565c0 100%
     );
 
+
   color: white;
 
+
 }
+
+
 
 
 /* GLOW */
 .electricity::before,
 .electricity::after {
 
+
   content: "";
+
 
   position: absolute;
 
+
   border-radius: 50%;
+
 
   filter: blur(90px);
 
+
   opacity: 0.18;
 
+
 }
+
+
 
 
 /* LJUS GLOW */
 .electricity::before {
 
+
   width: 350px;
   height: 350px;
 
+
   background: #4fc3f7;
+
 
   top: -100px;
   right: -80px;
 
+
 }
+
+
 
 
 /* MÖRK GLOW */
 .electricity::after {
 
+
   width: 300px;
   height: 300px;
 
+
   background: #1565c0;
+
 
   bottom: -120px;
   left: -100px;
 
+
 }
+
+
 
 
 /* ELPRIS LAYOUT */
 .electricity-layout {
 
+
   display: grid;
+
 
   grid-template-columns: 1fr 2fr;
 
+
   gap: 40px;
+
 
   margin-top: 50px;
 
+
 }
+
+
 
 
 /* LIVE PRICE BOX */
 .live-price-box {
 
+
   background: rgba(255,255,255,0.08);
+
 
   backdrop-filter: blur(12px);
 
+
   border: 1px solid rgba(255,255,255,0.08);
+
 
   padding: 40px;
 
+
   border-radius: 20px;
 
+
 }
+
+
 
 
 /* LIVE PRIS */
 .live-price {
 
+
   font-size: 3rem;
+
 
   font-weight: 800;
 
+
   color: var(--lightBlue);
+
 
   margin: 20px 0;
 
+
 }
+
+
 
 
 /* ELZON */
@@ -766,24 +1102,36 @@ textarea:focus {
 }
 
 
+
+
 /* GRAFBOX */
 .electricity-chart {
 
+
     background:rgba(255,255,255,0.08);
+
 
   backdrop-filter:blur(12px);
 
+
   border:1px solid rgba(255,255,255,0.08);
+
 
   padding:30px;
 
+
   border-radius:20px;
+
 
   height:420px;
 
+
   position:relative;
 
+
 }
+
+
 
 
 /* ELTEXT */
@@ -792,14 +1140,175 @@ textarea:focus {
 }
 
 
+
+
 .live-price-box h3,
 .electricity-chart h3 {
   color: white;
 }
 
 
+
+
 .electricity .section-text {
   color: rgba(255,255,255,0.8);
+}
+
+
+/* PRISTABELL */
+.price-table-wrapper {
+
+
+  margin-top: 50px;
+
+
+}
+
+
+
+
+.price-table-title {
+
+
+  color: white;
+
+
+  font-family: 'Syne', sans-serif;
+
+
+  font-size: 1.3rem;
+
+
+  margin-bottom: 20px;
+
+
+}
+
+
+
+
+.price-table {
+
+
+  width: 100%;
+
+
+  border-collapse: collapse;
+
+
+  border-radius: 16px;
+
+
+  overflow: hidden;
+
+
+}
+
+
+
+
+.price-table thead tr {
+
+
+  background: var(--midBlue);
+
+
+}
+
+
+
+
+.price-table th {
+
+
+  padding: 16px 20px;
+
+
+  text-align: left;
+
+
+  color: white;
+
+
+  font-family: 'Syne', sans-serif;
+
+
+  font-weight: 700;
+
+
+  letter-spacing: 0.5px;
+
+
+}
+
+
+
+
+.price-table tbody tr:nth-child(odd) {
+
+
+  background: rgba(255, 255, 255, 0.10);
+
+
+}
+
+
+
+
+.price-table tbody tr:nth-child(even) {
+
+
+  background: rgba(255, 255, 255, 0.04);
+
+
+}
+
+
+
+
+.price-table td {
+
+
+  padding: 14px 20px;
+
+
+  color: rgba(255, 255, 255, 0.9);
+
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+
+}
+
+
+
+
+.price-table tfoot tr {
+
+
+  background: var(--lightBlue);
+
+
+}
+
+
+
+
+.price-table tfoot td {
+
+
+  padding: 16px 20px;
+
+
+  color: var(--darkBlue);
+
+
+  font-weight: 700;
+
+
+  border-bottom: none;
+
+
 }
 
 
@@ -808,13 +1317,19 @@ textarea:focus {
 ===================================================== */
 .contact {
 
+
   background: var(--darkBlue);
+
 
   color: white;
 
+
   text-align: center;
 
+
 }
+
+
 
 
 .contact-layout {
@@ -836,22 +1351,33 @@ textarea:focus {
 }
 
 
+
+
 /* SEND BUTTON */
 .send-btn {
 
+
   background: var(--lightBlue);
+
 
   border: none;
 
+
   padding: 14px;
+
 
   border-radius: 12px;
 
+
   font-weight: 700;
+
 
   cursor: pointer;
 
+
 }
+
+
 
 
 /* =====================================================
@@ -859,15 +1385,22 @@ textarea:focus {
 ===================================================== */
 footer {
 
+
   background: #06101d;
+
 
   color: rgba(255,255,255,0.5);
 
+
   text-align: center;
+
 
   padding: 24px;
 
+
 }
+
+
 
 
 /* =====================================================
@@ -875,22 +1408,33 @@ footer {
 ===================================================== */
 .animate {
 
+
   opacity: 0;
+
 
   transform: translateY(20px);
 
+
   transition: 0.6s;
 
+
 }
+
+
 
 
 .animate.in {
 
+
   opacity: 1;
+
 
   transform: translateY(0);
 
+
 }
+
+
 
 
 /* =====================================================
@@ -898,49 +1442,69 @@ footer {
 ===================================================== */
 .menu-btn {
 
+
   display: none;
+
 
   flex-direction: column;
 
+
   gap: 5px;
+
 
   background: none;
 
+
   border: none;
+
 
   cursor: pointer;
 
+
 }
+
+
 
 
 /* STRECK */
 .menu-btn span {
 
+
   width: 25px;
   height: 2px;
 
+
   background: white;
 
+
 }
+
+
 
 
 /* =====================================================
    RESPONSIVE
 ===================================================== */
 
+
 /* TABLET */
 @media (max-width: 1024px) {
+
 
   .about-grid,
   .calculator-layout {
     grid-template-columns: 1fr;
   }
 
+
   .case-grid {
     grid-template-columns: 1fr 1fr;
   }
 
+
 }
+
+
 
 
 /* MOBILE */
@@ -955,69 +1519,91 @@ footer {
 }
 
 
+
+
 @media (max-width: 640px) {
+
 
   .navbar {
     padding: 0 20px;
   }
 
+
   .menu-btn {
     display: flex;
   }
 
+
   .nav-links {
+
 
     display: none;
 
+
     position: absolute;
+
 
     top: 70px;
     left: 0;
     right: 0;
 
+
     background: var(--darkBlue);
+
 
     flex-direction: column;
 
+
     padding: 20px;
 
+
   }
+
 
   .nav-links.open {
     display: flex;
   }
 
+
   .hero {
     padding: 80px 20px;
   }
+
 
   .hero h1 {
     font-size: 2.7rem;
   }
 
+
   .section {
     padding: 60px 20px;
   }
+
 
   .feature-grid,
   .case-grid {
     grid-template-columns: 1fr;
   }
 
+
   .automation-title {
     font-size: 2rem;
   }
+
 
   .automation-text {
     font-size: 1.1rem;
   }
 
+
   .automation-list li {
     font-size: 1.05rem;
   }
 
+
   .live-price {
     font-size: 2.2rem;
   }
+
 
 }

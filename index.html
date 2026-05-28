@@ -3,9 +3,6 @@
 
 <head>
 
-  <!-- =====================================================
-       GRUNDINSTÄLLNINGAR
-  ====================================================== -->
   <meta charset="UTF-8" />
 
   <meta
@@ -18,9 +15,6 @@
   </title>
 
 
-  <!-- =====================================================
-       GOOGLE FONTS
-  ====================================================== -->
   <link
     rel="preconnect"
     href="https://fonts.googleapis.com"
@@ -38,14 +32,8 @@
   >
 
 
-  <!-- =====================================================
-       CHART.JS
-  ====================================================== -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <!-- =====================================================
-       LEAFLET (OpenStreetMap)
-  ====================================================== -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -53,18 +41,12 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   
   
-  <!-- =====================================================
-       EGEN CSS
-  ====================================================== -->
   <link
     rel="stylesheet"
     href="Css/style.css"
   >
 
 
-  <!-- =====================================================
-       FAVICON
-  ====================================================== -->
   <link
     rel="icon"
     href="Images/blixt.png"
@@ -75,18 +57,13 @@
 
 <body>
 
-  <!-- =====================================================
-       NAVIGATION
-  ====================================================== -->
   <nav class="navbar">
 
-    <!-- Logotyp -->
     <div class="logo">
       Easy<span>Solar</span>
     </div>
 
 
-    <!-- Hamburgerikon -->
     <button
       class="menu-btn"
       id="menuBtn"
@@ -100,7 +77,6 @@
     </button>
 
 
-    <!-- Menylänkar -->
     <ul class="nav-links" id="navLinks">
 
       <li>
@@ -144,9 +120,6 @@
   </nav>
 
 
-  <!-- =====================================================
-       HERO
-  ====================================================== -->
   <header class="hero">
 
     <div class="hero-content">
@@ -190,9 +163,6 @@
   </header>
 
 
-  <!-- =====================================================
-       OM OSS
-  ====================================================== -->
   <section
     class="about section"
     id="about"
@@ -200,7 +170,6 @@
 
     <div class="about-grid">
 
-      <!-- Text -->
       <div class="animate">
 
         <p class="section-label">
@@ -220,7 +189,6 @@
         </p>
 
 
-        <!-- Informationskort -->
         <div class="feature-grid">
 
           <div class="feature-card">
@@ -274,7 +242,6 @@
       </div>
 
 
-      <!-- Bild -->
       <div class="animate">
 
         <div class="sun-box">
@@ -296,9 +263,6 @@
   </section>
 
 
-  <!-- =====================================================
-       KUNDFALL
-  ====================================================== -->
   <section
     class="cases section"
     id="cases"
@@ -319,7 +283,6 @@
 
     <div class="case-grid">
 
-      <!-- Kort 1 -->
       <article class="case-card animate">
 
         <div class="top-line"></div>
@@ -350,7 +313,6 @@
       </article>
 
 
-      <!-- Kort 2 -->
       <article class="case-card animate">
 
         <div class="top-line"></div>
@@ -381,7 +343,6 @@
       </article>
 
 
-      <!-- Kort 3 -->
       <article class="case-card animate">
 
         <div class="top-line"></div>
@@ -416,9 +377,6 @@
   </section>
 
 
-  <!-- =====================================================
-       AUTOMATION
-  ====================================================== -->
   <section
     class="automation section"
     id="automation"
@@ -476,9 +434,6 @@
   </section>
 
 
-  <!-- =====================================================
-       KALKYLATOR
-  ====================================================== -->
   <section
     class="calculator section"
     id="calculator"
@@ -499,7 +454,6 @@
 
     <div class="calculator-layout">
 
-      <!-- Form -->
       <div>
 
         <div class="calc-form">
@@ -507,7 +461,7 @@
           <div>
 
             <label for="consumption">
-              <!-- Årsförbrukning --> (kWh)
+              (kWh)
             </label>
 
             <input
@@ -583,7 +537,6 @@
         </div>
 
 
-        <!-- Resultat -->
         <div class="result-box" id="resultBox">
 
           <div class="result-row">
@@ -611,7 +564,6 @@
       </div>
 
 
-      <!-- Diagram -->
       <div class="chart-container animate">
 
         <h3>
@@ -623,13 +575,9 @@
       </div>
 
     </div>
-
   </section>
 
 
-  <!-- =====================================================
-       LIVE ELPRIS
-  ====================================================== -->
   <section
     class="electricity section"
     id="electricity"
@@ -658,7 +606,6 @@
 
     <div class="electricity-layout">
 
-      <!-- Livepris -->
       <div class="live-price-box animate">
 
         <h3>
@@ -679,7 +626,6 @@
       </div>
 
 
-      <!-- Graf -->
       <div class="electricity-chart animate">
 
         <h3>
@@ -691,13 +637,59 @@
       </div>
 
     </div>
+    <div class="price-table-wrapper animate">
 
-  </section>
+        <h3 class="price-table-title">
+          Prisjämförelse per elområde
+        </h3>
+
+        <table class="price-table">
+
+          <thead>
+            <tr>
+              <th>Elområde</th>
+              <th>Snittelpris 2024</th>
+              <th>Andel förnybar energi</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>SE1 – Luleå</td>
+              <td>0.38 kr/kWh</td>
+              <td>97 %</td>
+            </tr>
+            <tr>
+              <td>SE2 – Sundsvall</td>
+              <td>0.41 kr/kWh</td>
+              <td>94 %</td>
+            </tr>
+            <tr>
+              <td>SE3 – Stockholm</td>
+              <td>0.65 kr/kWh</td>
+              <td>76 %</td>
+            </tr>
+            <tr>
+              <td>SE4 – Malmö</td>
+              <td>0.71 kr/kWh</td>
+              <td>68 %</td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td>Riksgenomsnitt</td>
+              <td>0.54 kr/kWh</td>
+              <td>84 %</td>
+            </tr>
+          </tfoot>
+
+        </table>
+
+      </div> 
+   </section>
 
 
-  <!-- =====================================================
-       KONTAKT
-  ====================================================== -->
   <section
     class="contact section"
     id="contact"
@@ -740,28 +732,21 @@
           Skicka
         </button>
       </form>
-      <!-- Karta -->
       <div id="contactMap"></div>
     </div>
 
   </section>
 
 
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
   <footer>
 
     <p>
-      © 2025 EasySolar – Energieffektivisering AB
+      © 2026 EasySolar – Energieffektivisering AB
     </p>
 
   </footer>
 
 
-  <!-- =====================================================
-       JAVASCRIPT
-  ====================================================== -->
   <script src="Java/java.js"></script>
 
 </body>
