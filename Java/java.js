@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 /* =====================================================
    SCROLL-ANIMATIONER
 ===================================================== */
@@ -273,7 +274,9 @@ fetch(apiUrl)
   })
   .then(data => {
     const currentHour = new Date().getHours();
-    const currentPrice = data[currentHour] ? data[currentHour].SEK_per_kWh : data[0].SEK_per_kWh;
+    const currentMinute = new Date().getMinutes();
+    const currentIndex  = currentHour * 4 + Math.floor(currentMinute / 15);
+    const currentPrice  = data[currentIndex] ? data[currentIndex].SEK_per_kWh : data[0].SEK_per_kWh;
 
     document.getElementById("livePrice").textContent =
       currentPrice.toFixed(2) + " kr/kWh";
@@ -289,15 +292,15 @@ fetch(apiUrl)
     return response.json();
   })
   .then(data => {
-    const labels = data.map(price =>
-      price.time_start.substring(11, 16)
-    );
+  /*const hourly = data.filter((_, i) => i % 4 === 0);
+  const labels = hourly.map(price => price.time_start.substring(11, 16));
+  const prices = hourly.map(price => price.SEK_per_kWh);*/
+  const labels = data.map(price => price.time_start.substring(11, 16));
+  const prices = data.map(price => price.SEK_per_kWh);
 
-    const prices = data.map(price =>
-      price.SEK_per_kWh
-    );
 
-    const priceCtx = document.getElementById("priceChart").getContext("2d");
+
+  const priceCtx = document.getElementById("priceChart").getContext("2d");
 
     new Chart(priceCtx, {
       type: "line",
@@ -355,7 +358,7 @@ const map = L.map("contactMap").setView([59.440671, 18.062999], 15);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
   attribution:
-    '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>;'
+    '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
   L.marker([59.440671, 18.062999])
   .addTo(map)
@@ -364,5 +367,6 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   )
   .openPopup();
 
+});  
 
 

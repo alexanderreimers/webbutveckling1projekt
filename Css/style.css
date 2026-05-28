@@ -107,34 +107,19 @@ body {
   position: relative;
 
   background:
-    linear-gradient(
+   linear-gradient(
       135deg,
-      var(--darkBlue),
-      #1a3a6b,
-      var(--midBlue)
-    );
+      rgba(10, 37, 64, 0.88),
+      rgba(26, 58, 107, 0.78),
+      rgba(21, 101, 192, 0.72)
+    ),  
+  url('../Images/Sundown.jpg') center / cover no-repeat;
 
   color: white;
 
   padding: 120px 60px;
 
   overflow: hidden;
-
-}
-
-
-/* BAKGRUNDSCIRKLAR */
-.hero::before,
-.hero::after {
-
-  content: '';
-
-  position: absolute;
-  border-radius: 50%;
-
-  background: var(--lightBlue);
-
-  opacity: 0.08;
 
 }
 
