@@ -1,6 +1,5 @@
 /* =====================================================
    FÄRGVARIABLER
-   Här samlas alla färger så sidan blir enkel att ändra.
 ===================================================== */
 :root {
 
@@ -21,190 +20,188 @@
 
 /* =====================================================
    RESET
-   Tar bort standardmarginaler från webbläsaren.
 ===================================================== */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
-body{
-  font-family:'DM Sans', sans-serif;
-  background:white;
-  color:var(--textDark);
-  line-height:1.6;
+body {
+
+  font-family: 'DM Sans', sans-serif;
+  background: white;
+  color: var(--textDark);
+  line-height: 1.6;
+
 }
 
 
 /* =====================================================
    NAVBAR
 ===================================================== */
-.navbar{
+.navbar {
 
-  position:sticky;
-  top:0;
+  position: sticky;
+  top: 0;
 
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  background:var(--darkBlue);
+  background: var(--darkBlue);
 
-  padding:0 60px;
-  height:70px;
+  padding: 0 60px;
+  height: 70px;
 
-  z-index:100;
-
-}
-
-
-/* Logotyp */
-.logo{
-
-  font-family:'Syne', sans-serif;
-  font-size:1.6rem;
-  font-weight:800;
-  color:white;
+  z-index: 100;
 
 }
 
-.logo span{
-  color:var(--lightBlue);
-}
 
+/* LOGO */
+.logo {
 
-/* Menylänkar */
-.nav-links{
-
-  display:flex;
-  gap:36px;
-
-  list-style:none;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
 
 }
 
-.nav-links a{
+.logo span {
+  color: var(--lightBlue);
+}
 
-  color:rgba(255,255,255,0.8);
 
-  text-decoration:none;
+/* MENYLÄNKAR */
+.nav-links {
 
-  transition:0.2s;
+  display: flex;
+  gap: 36px;
+
+  list-style: none;
 
 }
 
-.nav-links a:hover{
-  color:var(--lightBlue);
+.nav-links a {
+
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+
+  transition: 0.2s;
+
+}
+
+.nav-links a:hover {
+  color: var(--lightBlue);
 }
 
 
 /* =====================================================
    HERO
 ===================================================== */
-.hero{
+.hero {
 
-  position:relative;
+  position: relative;
 
   background:
-  linear-gradient(
-    135deg,
-    var(--darkBlue),
-    #1a3a6b,
-    var(--midBlue)
-  );
+    linear-gradient(
+      135deg,
+      var(--darkBlue),
+      #1a3a6b,
+      var(--midBlue)
+    );
 
-  color:white;
+  color: white;
 
-  padding:120px 60px;
+  padding: 120px 60px;
 
-  overflow:hidden;
+  overflow: hidden;
 
 }
 
 
-/* Dekorativa bakgrundscirklar */
+/* BAKGRUNDSCIRKLAR */
 .hero::before,
-.hero::after{
+.hero::after {
 
-  content:'';
+  content: '';
 
-  position:absolute;
-  border-radius:50%;
+  position: absolute;
+  border-radius: 50%;
 
-  background:var(--lightBlue);
+  background: var(--lightBlue);
 
-  opacity:0.08;
-
-}
-
-.hero::before{
-
-  width:500px;
-  height:500px;
-
-  top:-180px;
-  right:-120px;
+  opacity: 0.08;
 
 }
 
-.hero::after{
+.hero::before {
 
-  width:260px;
-  height:260px;
+  width: 500px;
+  height: 500px;
 
-  bottom:-100px;
-  left:40%;
+  top: -180px;
+  right: -120px;
 
 }
 
+.hero::after {
 
-/* Hero-text */
-.hero-content{
+  width: 260px;
+  height: 260px;
 
-  position:relative;
-  max-width:700px;
+  bottom: -100px;
+  left: 40%;
 
 }
 
 
-/* Liten text ovanför rubriken */
-.hero-tag{
+/* HERO CONTENT */
+.hero-content {
 
-  color:var(--lightBlue);
-
-  text-transform:uppercase;
-
-  letter-spacing:2px;
-
-  margin-bottom:20px;
+  position: relative;
+  max-width: 700px;
 
 }
 
 
-/* Huvudrubrik */
-.hero h1{
+/* HERO TAG */
+.hero-tag {
 
-  font-family:'Syne', sans-serif;
+  color: var(--lightBlue);
 
-  font-size:4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 
-  line-height:1.1;
-
-  margin-bottom:24px;
+  margin-bottom: 20px;
 
 }
 
 
-/* Vanlig text */
-.hero-text{
+/* HERO RUBRIK */
+.hero h1 {
 
-  max-width:550px;
+  font-family: 'Syne', sans-serif;
 
-  margin-bottom:40px;
+  font-size: 4rem;
+  line-height: 1.1;
 
-  color:rgba(255,255,255,0.85);
+  margin-bottom: 24px;
+
+}
+
+
+/* HERO TEXT */
+.hero-text {
+
+  max-width: 550px;
+
+  margin-bottom: 40px;
+
+  color: rgba(255,255,255,0.85);
 
 }
 
@@ -212,45 +209,45 @@ body{
 /* =====================================================
    KNAPPAR
 ===================================================== */
-.btn{
+.btn {
 
-  display:inline-block;
+  display: inline-block;
 
-  padding:14px 28px;
+  padding: 14px 28px;
 
-  border-radius:12px;
+  border-radius: 12px;
 
-  text-decoration:none;
+  text-decoration: none;
 
-  transition:0.2s;
-
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-}
-
-
-/* Primär knapp */
-.primary-btn{
-
-  background:var(--lightBlue);
-
-  color:var(--darkBlue);
-
-  font-weight:700;
+  transition: 0.2s;
 
 }
 
+.btn:hover {
+  transform: translateY(-2px);
+}
 
-/* Sekundär knapp */
-.secondary-btn{
 
-  border:2px solid rgba(255,255,255,0.5);
+/* PRIMÄR KNAPP */
+.primary-btn {
 
-  color:white;
+  background: var(--lightBlue);
 
-  margin-left:16px;
+  color: var(--darkBlue);
+
+  font-weight: 700;
+
+}
+
+
+/* SEKUNDÄR KNAPP */
+.secondary-btn {
+
+  border: 2px solid rgba(255,255,255,0.5);
+
+  color: white;
+
+  margin-left: 16px;
 
 }
 
@@ -258,324 +255,411 @@ body{
 /* =====================================================
    GEMENSAMMA SECTION-STILAR
 ===================================================== */
-.section{
-  padding:90px 60px;
+.section {
+  padding: 90px 60px;
 }
 
 
-.section-label{
+.section-label {
 
-  text-transform:uppercase;
+  text-transform: uppercase;
 
-  letter-spacing:2px;
+  letter-spacing: 2px;
 
-  color:var(--midBlue);
+  color: var(--midBlue);
 
-  margin-bottom:12px;
-
-}
-
-
-.section-title{
-
-  font-family:'Syne', sans-serif;
-
-  font-size:2.5rem;
-
-  margin-bottom:20px;
+  margin-bottom: 12px;
 
 }
 
 
-.section-text{
-  color:var(--textGray);
+.section-title {
+
+  font-family: 'Syne', sans-serif;
+
+  font-size: 2.5rem;
+
+  margin-bottom: 20px;
+
+}
+
+
+.section-text {
+  color: var(--textGray);
 }
 
 
 /* =====================================================
    ABOUT
 ===================================================== */
-.about-grid{
+.about-grid {
 
-  display:grid;
+  display: grid;
 
-  grid-template-columns:1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 
-  gap:60px;
+  gap: 60px;
 
-  align-items:center;
-
-}
-
-
-/* Kortgrid */
-.feature-grid{
-
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:20px;
-
-  margin-top:36px;
+  align-items: center;
 
 }
 
 
-/* Kort */
-.feature-card{
+/* FEATURE GRID */
+.feature-grid {
 
-  background:var(--lightBg);
+  display: grid;
 
-  padding:20px;
+  grid-template-columns: 1fr 1fr;
 
-  border-radius:12px;
+  gap: 20px;
 
-  border-left:4px solid var(--midBlue);
-
-}
-
-
-/* Sol-illustration */
-.sun-box{
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  background:var(--lightBg);
-
-  border-radius:24px;
-
-  padding:30px;
-
-  min-height:420px;
-
-  overflow:hidden;
+  margin-top: 36px;
 
 }
 
 
-/* Bild */
-.solar-image{
+/* FEATURE CARD */
+.feature-card {
 
-  width:100%;
+  background: var(--lightBg);
 
-  max-width:420px;
+  padding: 20px;
 
-  height:auto;
+  border-radius: 12px;
 
-  object-fit:contain;
-
-  transition:0.3s;
+  border-left: 4px solid var(--midBlue);
 
 }
 
 
-/* Liten hover-effekt */
-.solar-image:hover{
+/* SOLBOX */
+.sun-box {
 
-  transform:scale(1.03);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  background: var(--lightBg);
+
+  border-radius: 24px;
+
+  padding: 30px;
+
+  min-height: 420px;
+
+  overflow: hidden;
+
+}
+
+
+/* SOLBILD */
+.solar-image {
+
+  width: 100%;
+
+  max-width: 420px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  transition: 0.3s;
+
+}
+
+.solar-image:hover {
+  transform: scale(1.03);
 }
 
 
 /* =====================================================
    KUNDFALL
 ===================================================== */
-.cases{
-  background:var(--lightBg);
+.cases {
+  background: var(--lightBg);
 }
 
 
-.case-grid{
+.case-grid {
 
-  display:grid;
+  display: grid;
 
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns: repeat(3,1fr);
 
-  gap:28px;
-
-}
-
-
-/* Kort */
-.case-card{
-
-  background:white;
-
-  border-radius:12px;
-
-  overflow:hidden;
-
-  transition:0.2s;
+  gap: 28px;
 
 }
 
-.case-card:hover{
-  transform:translateY(-6px);
+
+/* CASE CARD */
+.case-card {
+
+  background: white;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  transition: 0.2s;
+
+}
+
+.case-card:hover {
+  transform: translateY(-6px);
 }
 
 
-/* Blå topp */
-.top-line{
+/* TOP LINE */
+.top-line {
 
-  height:8px;
+  height: 8px;
 
   background:
-  linear-gradient(
-    90deg,
-    var(--midBlue),
-    var(--lightBlue)
-  );
+    linear-gradient(
+      90deg,
+      var(--midBlue),
+      var(--lightBlue)
+    );
 
 }
 
 
-/* Innehåll */
-.case-content{
-  padding:28px;
+/* CASE CONTENT */
+.case-content {
+  padding: 28px;
 }
 
 
-/* Resultatbox */
-.case-result{
+/* RESULT BOX */
+.case-result {
 
-  background:var(--lightBg);
+  background: var(--lightBg);
 
-  margin-top:20px;
+  margin-top: 20px;
 
-  padding:14px;
+  padding: 14px;
 
-  border-radius:10px;
+  border-radius: 10px;
 
 }
 
 
-/* Stor siffra */
-.number{
+/* STOR SIFFRA */
+.number {
 
-  display:block;
+  display: block;
 
-  font-size:2rem;
+  font-size: 2rem;
 
-  font-weight:700;
+  font-weight: 700;
 
-  color:var(--midBlue);
+  color: var(--midBlue);
 
+}
+
+
+/* =====================================================
+   AUTOMATISK STYRNING
+===================================================== */
+.automation {
+
+  background:
+    linear-gradient(
+      135deg,
+      #4d5f9b,
+      #5a6db0
+    );
+
+  color: white;
+
+}
+
+
+.automation-content {
+  max-width: 1100px;
+}
+
+
+.automation-title {
+
+  font-family: 'Syne', sans-serif;
+
+  font-size: 3rem;
+
+  margin-bottom: 30px;
+
+  color: white;
+
+}
+
+
+.automation-line {
+
+  width: 100%;
+  height: 4px;
+
+  background: rgba(255,255,255,0.15);
+
+  margin-bottom: 40px;
+
+  border-radius: 10px;
+
+}
+
+
+.automation-text {
+
+  font-size: 1.5rem;
+
+  line-height: 1.8;
+
+  color: rgba(255,255,255,0.92);
+
+  max-width: 1400px;
+
+  margin-bottom: 40px;
+
+}
+
+
+.automation-list {
+
+  list-style: disc;
+
+  padding-left: 40px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+
+}
+
+
+.automation-list li {
+
+  font-size: 1.4rem;
+
+  color: white;
+
+}
+
+
+.section-label.light {
+  color: rgba(255,255,255,0.7);
 }
 
 
 /* =====================================================
    KALKYLATOR
 ===================================================== */
-.calculator-layout{
+.calculator-layout {
 
-  display:grid;
+  display: grid;
 
-  grid-template-columns:1fr 1.4fr;
+  grid-template-columns: 1fr 1.4fr;
 
-  gap:50px;
-
-}
-
-
-/* Formulär */
-.calc-form{
-
-  display:flex;
-
-  flex-direction:column;
-
-  gap:20px;
+  gap: 50px;
 
 }
 
 
-/* Inputs */
+/* FORM */
+.calc-form {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+
+}
+
+
+/* INPUTS */
 input,
 select,
-textarea{
+textarea {
 
-  width:100%;
+  width: 100%;
 
-  padding:12px 16px;
+  padding: 12px 16px;
 
-  border:2px solid #d7e2eb;
+  border: 2px solid #d7e2eb;
 
-  border-radius:12px;
+  border-radius: 12px;
 
-  font-family:'DM Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 
 }
 
 
-/* När användaren klickar */
 input:focus,
 select:focus,
-textarea:focus{
+textarea:focus {
 
-  outline:none;
+  outline: none;
 
-  border-color:var(--midBlue);
-
-}
-
-
-/* Knapp */
-.calculate-btn{
-
-  background:var(--midBlue);
-
-  color:white;
-
-  border:none;
-
-  padding:14px;
-
-  border-radius:12px;
-
-  cursor:pointer;
+  border-color: var(--midBlue);
 
 }
 
 
-/* Resultatbox */
-.result-box{
+/* BERÄKNA KNAPP */
+.calculate-btn {
 
-  display:none;
+  background: var(--midBlue);
 
-  flex-direction:column;
+  color: white;
 
-  gap:12px;
+  border: none;
 
-  margin-top:24px;
+  padding: 14px;
 
-  background:var(--lightBg);
+  border-radius: 12px;
 
-  padding:24px;
-
-  border-radius:12px;
+  cursor: pointer;
 
 }
 
 
-/* Klassen läggs till med JavaScript */
-.result-box.show{
-  display:flex;
+/* RESULTATBOX */
+.result-box {
+
+  display: none;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin-top: 24px;
+
+  background: var(--lightBg);
+
+  padding: 24px;
+
+  border-radius: 12px;
+
 }
 
 
-/* Rad i resultatbox */
-.result-row{
+.result-box.show {
+  display: flex;
+}
 
-  display:flex;
 
-  justify-content:space-between;
+/* RESULTATRAD */
+.result-row {
 
-  border-bottom:1px solid #c8d8e7;
+  display: flex;
 
-  padding-bottom:10px;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #c8d8e7;
+
+  padding-bottom: 10px;
 
 }
 
@@ -583,58 +667,209 @@ textarea:focus{
 /* =====================================================
    GRAF
 ===================================================== */
-.chart-container{
+.chart-container {
 
-  background:var(--lightBg);
+  background: var(--lightBg);
 
-  padding:28px;
+  padding: 28px;
 
-  border-radius:12px;
+  border-radius: 12px;
 
+}
+
+
+/* =====================================================
+   LIVE ELPRISER
+===================================================== */
+.electricity {
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #07192f 0%,
+      #0a2540 35%,
+      #123d6b 70%,
+      #1565c0 100%
+    );
+
+  color: white;
+
+}
+
+
+/* GLOW */
+.electricity::before,
+.electricity::after {
+
+  content: "";
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(90px);
+
+  opacity: 0.18;
+
+}
+
+
+/* LJUS GLOW */
+.electricity::before {
+
+  width: 350px;
+  height: 350px;
+
+  background: #4fc3f7;
+
+  top: -100px;
+  right: -80px;
+
+}
+
+
+/* MÖRK GLOW */
+.electricity::after {
+
+  width: 300px;
+  height: 300px;
+
+  background: #1565c0;
+
+  bottom: -120px;
+  left: -100px;
+
+}
+
+
+/* ELPRIS LAYOUT */
+.electricity-layout {
+
+  display: grid;
+
+  grid-template-columns: 1fr 2fr;
+
+  gap: 40px;
+
+  margin-top: 50px;
+
+}
+
+
+/* LIVE PRICE BOX */
+.live-price-box {
+
+  background: rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  padding: 40px;
+
+  border-radius: 20px;
+
+}
+
+
+/* LIVE PRIS */
+.live-price {
+
+  font-size: 3rem;
+
+  font-weight: 800;
+
+  color: var(--lightBlue);
+
+  margin: 20px 0;
+
+}
+
+
+/* ELZON */
+.live-zone {
+  color: rgba(255,255,255,0.7);
+}
+
+
+/* GRAFBOX */
+.electricity-chart {
+
+  background: rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+}
+
+
+/* ELTEXT */
+.electricity-text {
+  max-width: 700px;
+}
+
+
+.live-price-box h3,
+.electricity-chart h3 {
+  color: white;
+}
+
+
+.electricity .section-text {
+  color: rgba(255,255,255,0.8);
 }
 
 
 /* =====================================================
    KONTAKT
 ===================================================== */
-.contact{
+.contact {
 
-  background:var(--darkBlue);
+  background: var(--darkBlue);
 
-  color:white;
+  color: white;
 
-  text-align:center;
-
-}
-
-
-.contact-form{
-
-  max-width:600px;
-
-  margin:auto;
-
-  display:grid;
-
-  gap:18px;
+  text-align: center;
 
 }
 
 
-/* Skicka-knapp */
-.send-btn{
+.contact-form {
 
-  background:var(--lightBlue);
+  max-width: 600px;
 
-  border:none;
+  margin: auto;
 
-  padding:14px;
+  display: grid;
 
-  border-radius:12px;
+  gap: 18px;
 
-  font-weight:700;
+}
 
-  cursor:pointer;
+
+/* SEND BUTTON */
+.send-btn {
+
+  background: var(--lightBlue);
+
+  border: none;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
 
 }
 
@@ -642,15 +877,15 @@ textarea:focus{
 /* =====================================================
    FOOTER
 ===================================================== */
-footer{
+footer {
 
-  background:#06101d;
+  background: #06101d;
 
-  color:rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.5);
 
-  text-align:center;
+  text-align: center;
 
-  padding:24px;
+  padding: 24px;
 
 }
 
@@ -658,31 +893,22 @@ footer{
 /* =====================================================
    ANIMATIONER
 ===================================================== */
+.animate {
 
-/*
-  Alla element med klassen "animate"
-  börjar osynliga.
-*/
-.animate{
+  opacity: 0;
 
-  opacity:0;
+  transform: translateY(20px);
 
-  transform:translateY(20px);
-
-  transition:0.6s;
+  transition: 0.6s;
 
 }
 
 
-/*
-  Klassen "in" läggs till med JS
-  när elementet scrollas in.
-*/
-.animate.in{
+.animate.in {
 
-  opacity:1;
+  opacity: 1;
 
-  transform:translateY(0);
+  transform: translateY(0);
 
 }
 
@@ -690,30 +916,30 @@ footer{
 /* =====================================================
    MOBILMENY
 ===================================================== */
-.menu-btn{
+.menu-btn {
 
-  display:none;
+  display: none;
 
-  flex-direction:column;
+  flex-direction: column;
 
-  gap:5px;
+  gap: 5px;
 
-  background:none;
+  background: none;
 
-  border:none;
+  border: none;
 
-  cursor:pointer;
+  cursor: pointer;
 
 }
 
 
-/* Strecken */
-.menu-btn span{
+/* STRECK */
+.menu-btn span {
 
-  width:25px;
-  height:2px;
+  width: 25px;
+  height: 2px;
 
-  background:white;
+  background: white;
 
 }
 
@@ -722,370 +948,94 @@ footer{
    RESPONSIVE
 ===================================================== */
 
-/* Surfplatta */
-@media(max-width:1024px){
+/* TABLET */
+@media (max-width: 1024px) {
 
   .about-grid,
-  .calculator-layout{
-    grid-template-columns:1fr;
+  .calculator-layout {
+    grid-template-columns: 1fr;
   }
 
-  .case-grid{
-    grid-template-columns:1fr 1fr;
+  .case-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
 }
 
 
-/* Mobil */
-@media(max-width:640px){
+/* MOBILE */
+@media (max-width: 900px) {
 
-  .navbar{
-    padding:0 20px;
+  .electricity-layout {
+    grid-template-columns: 1fr;
   }
 
-  .menu-btn{
-    display:flex;
+}
+
+
+@media (max-width: 640px) {
+
+  .navbar {
+    padding: 0 20px;
   }
 
-  /*
-    Menyn göms först.
-    JavaScript öppnar den genom
-    att lägga till klassen "open".
-  */
-  .nav-links{
+  .menu-btn {
+    display: flex;
+  }
 
-    display:none;
+  .nav-links {
 
-    position:absolute;
+    display: none;
 
-    top:70px;
-    left:0;
-    right:0;
+    position: absolute;
 
-    background:var(--darkBlue);
+    top: 70px;
+    left: 0;
+    right: 0;
 
-    flex-direction:column;
+    background: var(--darkBlue);
 
-    padding:20px;
+    flex-direction: column;
+
+    padding: 20px;
 
   }
 
-  .nav-links.open{
-    display:flex;
+  .nav-links.open {
+    display: flex;
   }
 
-  .hero{
-    padding:80px 20px;
+  .hero {
+    padding: 80px 20px;
   }
 
-  .hero h1{
-    font-size:2.7rem;
+  .hero h1 {
+    font-size: 2.7rem;
   }
 
-  .section{
-    padding:60px 20px;
+  .section {
+    padding: 60px 20px;
   }
 
   .feature-grid,
-  .case-grid{
-    grid-template-columns:1fr;
+  .case-grid {
+    grid-template-columns: 1fr;
   }
 
-}
-
-/* =====================================================
-   AUTOMATISK STYRNING
-===================================================== */
-
-.automation{
-
-  background:
-  linear-gradient(
-    135deg,
-    #4d5f9b,
-    #5a6db0
-  );
-
-  color:white;
-
-}
-
-
-.automation-content{
-
-  max-width:1100px;
-
-}
-
-
-.automation-title{
-
-  font-family:'Syne', sans-serif;
-
-  font-size:3rem;
-
-  margin-bottom:30px;
-
-  color:white;
-
-}
-
-
-.automation-line{
-
-  width:100%;
-  height:4px;
-
-  background:rgba(255,255,255,0.15);
-
-  margin-bottom:40px;
-
-  border-radius:10px;
-
-}
-
-
-.automation-text{
-
-  font-size:1.5rem;
-
-  line-height:1.8;
-
-  color:rgba(255,255,255,0.92);
-
-  max-width:1400px;
-
-  margin-bottom:40px;
-
-}
-
-
-.automation-list{
-
-  list-style:disc;
-
-  padding-left:40px;
-
-  display:flex;
-
-  flex-direction:column;
-
-  gap:18px;
-
-}
-
-
-.automation-list li{
-
-  font-size:1.4rem;
-
-  color:white;
-
-}
-
-
-.section-label.light{
-  color:rgba(255,255,255,0.7);
-}
-
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media(max-width:640px){
-
-  .automation-title{
-    font-size:2rem;
+  .automation-title {
+    font-size: 2rem;
   }
 
-  .automation-text{
-    font-size:1.1rem;
+  .automation-text {
+    font-size: 1.1rem;
   }
 
-  .automation-list li{
-    font-size:1.05rem;
+  .automation-list li {
+    font-size: 1.05rem;
   }
 
-}
-
-/* =====================================================
-   ELPRISER LIVE
-===================================================== */
-
-.electricity{
-
-  position:relative;
-
-  overflow:hidden;
-
-  background:
-  linear-gradient(
-    135deg,
-    #07192f 0%,
-    #0a2540 35%,
-    #123d6b 70%,
-    #1565c0 100%
-  );
-
-  color:white;
-
-}
-
-/* Glow-effekter */
-.electricity::before,
-.electricity::after{
-
-  content:"";
-
-  position:absolute;
-
-  border-radius:50%;
-
-  filter:blur(90px);
-
-  opacity:0.18;
-
-}
-
-
-/* Stor blå glow */
-.electricity::before{
-
-  width:350px;
-  height:350px;
-
-  background:#4fc3f7;
-
-  top:-100px;
-  right:-80px;
-
-}
-
-
-/* Mörk glow */
-.electricity::after{
-
-  width:300px;
-  height:300px;
-
-  background:#1565c0;
-
-  bottom:-120px;
-  left:-100px;
-
-}
-
-.electricity-layout{
-
-  display:grid;
-
-  grid-template-columns:1fr 2fr;
-
-  gap:40px;
-
-  margin-top:50px;
-
-}
-
-
-.live-price-box{
-
-  background:rgba(255,255,255,0.08);
-
-  backdrop-filter:blur(12px);
-
-  border:1px solid rgba(255,255,255,0.08);
-
-  padding:40px;
-
-  border-radius:20px;
-
-}
-
-
-
-.live-price{
-
-  font-size:3rem;
-
-  font-weight:800;
-
-  color:var(--midBlue);
-
-  margin:20px 0;
-
-}
-
-
-.live-zone{
-
-  color:var(--textGray);
-
-}
-
-
-.electricity-chart{
-
-  background:rgba(255,255,255,0.08);
-
-  backdrop-filter:blur(12px);
-
-  border:1px solid rgba(255,255,255,0.08);
-
-}
-
-
-.electricity-text{
-
-  max-width:700px;
-
-}
-
-.live-price-box h3,
-.electricity-chart h3{
-
-  color:white;
-
-}
-
-
-.live-zone{
-
-  color:rgba(255,255,255,0.7);
-
-}
-
-
-.electricity .section-text{
-
-  color:rgba(255,255,255,0.8);
-
-}
-
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media(max-width:900px){
-
-  .electricity-layout{
-
-    grid-template-columns:1fr;
-
-  }
-
-}
-
-
-@media(max-width:640px){
-
-  .live-price{
-
-    font-size:2.2rem;
-
+  .live-price {
+    font-size: 2.2rem;
   }
 
 }
