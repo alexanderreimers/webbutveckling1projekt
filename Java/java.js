@@ -256,172 +256,97 @@ function closeMenu(){
 
 
 /* =====================================================
-   LIVE ELPRIS API
-===================================================== */
-
-fetch(
-  "https://www.elprisetjustnu.se/api/v1/prices/current.json?zone=SE3"
-)
-
-  .then(response => response.json())
-
-  .then(data => {
-
-    document.getElementById("livePrice")
-      .textContent =
-        data.SEK_per_kWh.toFixed(2)
-        + " kr/kWh";
-
-  })
-
-  .catch(error => {
-
-    document.getElementById("livePrice")
-      .textContent =
-        "Kunde inte hämta elpris";
-
-    console.error(error);
-
-  });
-
-
-/* =====================================================
-   GRAF ÖVER DAGENS ELPRIS
+   LIVE ELPRIS & GRAF (Korrigerad ordning)
 ===================================================== */
 
 const today = new Date();
+const year = today.getFullYear(); 
+const month = String(today.getMonth() + 1).padStart(2, "0"); 
+const day = String(today.getDate()).padStart(2, "0"); 
 
-const year =
-  today.getFullYear();
-
-const month =
-  String(today.getMonth() + 1)
-  .padStart(2, "0");
-
-const day =
-  String(today.getDate())
-  .padStart(2, "0");
-
-
-const apiUrl =
-  `https://www.elprisetjustnu.se/api/v1/prices/${year}-${month}-${day}_SE3.json`;
-
+const apiUrl = `https://www.elprisetjustnu.se/api/v1/prices/${year}-${month}-${day}_SE3.json`;
 
 fetch(apiUrl)
-
-  .then(response => response.json())
-
-  .then(data => {
-
-    const labels = data.map(price =>
-
-      price.time_start.substring(11,16)
-
-    );
-
-
-    const prices = data.map(price =>
-
-      price.SEK_per_kWh
-
-    );
-
-
-    const priceCtx =
-      document.getElementById("priceChart")
-      .getContext("2d");
-
-
-    new Chart(priceCtx,{
-
-      type:"line",
-
-      data:{
-
-        labels:labels,
-
-        datasets:[{
-
-          label:"kr/kWh",
-
-          data:prices,
-
-          borderColor:"#4fc3f7",
-
-          backgroundColor:
-            "rgba(79,195,247,0.15)",
-
-          fill:true,
-
-          tension:0.35,
-
-          pointRadius:3,
-
-          pointBackgroundColor:"#ffffff"
-
-        }]
-
-      },
-
-      options:{
-
-        responsive:true,
-
-        maintainAspectRatio:false,
-
-        plugins:{
-
-          legend:{
-            display:false
-          }
-
-        },
-
-        scales:{
-
-          x:{
-
-            ticks:{
-              color:"#ffffff"
-            },
-
-            grid:{
-              color:"rgba(255,255,255,0.08)"
-            }
-
-          },
-
-          y:{
-
-            beginAtZero:false,
-
-            ticks:{
-              color:"#ffffff"
-            },
-
-            grid:{
-              color:"rgba(255,255,255,0.08)"
-            }
-
-          }
-
-        }
-
-      }
-
-    });
-
+  .then(response => {
+    if (!response.ok) throw new Error("Hittade inga priser för dagens datum.");
+    return response.json();
   })
+  .then(data => {
+    const currentHour = new Date().getHours();
+    const currentPrice = data[currentHour] ? data[currentHour].SEK_per_kWh : data[0].SEK_per_kWh;
 
+    document.getElementById("livePrice").textContent =
+      currentPrice.toFixed(2) + " kr/kWh";
+  })
   .catch(error => {
-
-    console.error(
-      "Fel vid hämtning av elprisgraf:",
-      error
-    );
-
+    document.getElementById("livePrice").textContent = "API-fel";
+    console.error("Fel vid hämtning av livepris:", error);
   });
 
+fetch(apiUrl)
+  .then(response => {
+    if (!response.ok) throw new Error("Hittade inga priser för grafen.");
+    return response.json();
+  })
+  .then(data => {
+    const labels = data.map(price =>
+      price.time_start.substring(11, 16)
+    );
+
+    const prices = data.map(price =>
+      price.SEK_per_kWh
+    );
+
+    const priceCtx = document.getElementById("priceChart").getContext("2d");
+
+    new Chart(priceCtx, {
+      type: "line",
+      data: {
+        labels: labels,
+        datasets: [{
+          label: "kr/kWh",
+          data: prices,
+          borderColor: "#4fc3f7",
+          backgroundColor: "rgba(79,195,247,0.15)",
+          fill: true,
+          tension: 0.35,
+          pointRadius: 3,
+          pointBackgroundColor: "#ffffff"
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          x: {
+            ticks: {
+              color: "#ffffff"
+            },
+            grid: {
+              color: "rgba(255,255,255,0.08)"
+            }
+          },
+          y: {
+            beginAtZero: false,
+            ticks: {
+              color: "#ffffff"
+            },
+            grid: {
+              color: "rgba(255,255,255,0.08)"
+            }
+          }
+        }
+      }
+    });
+  })
+  .catch(error => {
+    console.error("Fel vid hämtning av prisgraf:", error);
+  });
 
 
 

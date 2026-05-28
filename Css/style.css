@@ -675,6 +675,12 @@ textarea:focus {
 
   border-radius: 12px;
 
+  /* PRICE CHART */
+#priceChart {
+  width: 100% !important;
+  height: 320px !important;
+}
+
 }
 
 
@@ -799,15 +805,19 @@ textarea:focus {
 /* GRAFBOX */
 .electricity-chart {
 
-  background: rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.08);
 
-  backdrop-filter: blur(12px);
+  backdrop-filter:blur(12px);
 
-  border: 1px solid rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.08);
 
-  padding: 30px;
+  padding:30px;
 
-  border-radius: 20px;
+  border-radius:20px;
+
+  height:420px;
+
+  position:relative;
 
 }
 
