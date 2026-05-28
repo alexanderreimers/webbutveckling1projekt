@@ -123,27 +123,6 @@ body {
 
 }
 
-.hero::before {
-
-  width: 500px;
-  height: 500px;
-
-  top: -180px;
-  right: -120px;
-
-}
-
-.hero::after {
-
-  width: 260px;
-  height: 260px;
-
-  bottom: -100px;
-  left: 40%;
-
-}
-
-
 /* HERO CONTENT */
 .hero-content {
 
